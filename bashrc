@@ -35,6 +35,11 @@ umask 0022
 PATH="/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin"
 PATH="/usr/local/bin:$PATH"
 
+# Append macports bin (/opt) if on mac
+if [[ `uname` == "Darwin" ]]; then
+    PATH="/opt/local/bin:$PATH"
+fi
+
 # ~/bin if it exists
 test -d "$HOME/bin" &&
 PATH="$HOME/bin:$PATH"
