@@ -5,8 +5,11 @@
 (tool-bar-mode -1)
 (toggle-scroll-bar -1)
 (show-paren-mode 1)
-(set-default 'indent-tabs-mode nil)
-(set-default 'indicate-empty-lines t)
+(setq inhibit-splash-screen t)
+(setq-default indent-tabs-mode nil)
+(setq-default indicate-empty-lines t)
+(setq-default tab-width 2)
+(setq-default espresso-indent-level 2)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;;-----------------------------------------------------------------
@@ -19,6 +22,10 @@
 
 ;; Add this directory to load path initially
 (add-to-list 'load-path dotfiles-dir)
+
+;; Don't clutter up directories with files~
+(setq backup-directory-alist `(("." . ,(expand-file-name
+                                        (concat dotfiles-dir "backups")))))
 
 ;;-----------------------------------------------------------------
 ;; Color Theme
@@ -38,8 +45,10 @@
 ;;-----------------------------------------------------------------
 ;; Other Packages and Files
 ;;-----------------------------------------------------------------
+(load "modes.el")
 (load "keybindings.el")
 (load "hooks.el")
+(load "filetypes.el")
 
 ;; ido
 (ido-mode t)
