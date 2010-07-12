@@ -10,6 +10,7 @@
 (setq-default indicate-empty-lines t)
 (setq-default tab-width 2)
 (setq-default espresso-indent-level 2)
+(setq-default vc-handled-backends nil)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;;-----------------------------------------------------------------
@@ -26,6 +27,7 @@
 ;; Don't clutter up directories with files~
 (setq backup-directory-alist `(("." . ,(expand-file-name
                                         (concat dotfiles-dir "backups")))))
+(setq auto-save-default nil)
 
 ;;-----------------------------------------------------------------
 ;; Color Theme
