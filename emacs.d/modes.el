@@ -1,4 +1,11 @@
 ;;-----------------------------------------------------------------
+;; rainbow mode - Highlights colors within a file, such as "#FF00FF"
+;; or "rgba(1,2,3,0.5)"
+;;-----------------------------------------------------------------
+(add-to-list 'load-path (concat packages-dir "/rainbow-mode"))
+(require 'rainbow-mode)
+
+;;-----------------------------------------------------------------
 ;; js-mode (espresso)
 ;;-----------------------------------------------------------------
 ;; Espresso mode has sane indenting so we use that.
