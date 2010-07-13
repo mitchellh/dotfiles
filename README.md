@@ -5,13 +5,9 @@ the way I want it.
 
 ## Installation
 
-My dotfiles are organized such that they physically all exist in a
-`~/.dotfiles` directory, and are then symlinked to my actually `$HOME`
-directory.
-
     git clone git://github.com/mitchellh/dotfiles.git ~/.dotfiles
     cd ~/.dotfiles
-    rake install
+    thor dotfiles:install
 
 ## Specific Dotfile Docs
 
