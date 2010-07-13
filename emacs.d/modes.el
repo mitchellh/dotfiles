@@ -6,6 +6,13 @@
 (require 'rainbow-mode)
 
 ;;-----------------------------------------------------------------
+;; Markdown mode
+;;-----------------------------------------------------------------
+;; Set path
+(add-to-list 'load-path (concat packages-dir "/markdown-mode"))
+(autoload 'markdown-mode "markdown-mode" nil t)
+
+;;-----------------------------------------------------------------
 ;; js-mode (espresso)
 ;;-----------------------------------------------------------------
 ;; Espresso mode has sane indenting so we use that.
