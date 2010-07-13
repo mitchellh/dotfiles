@@ -1,4 +1,11 @@
 ;;-----------------------------------------------------------------
+;; Buffer move - A helper to move buffers around when using multiple
+;; frames.
+;;-----------------------------------------------------------------
+(add-to-list 'load-path (concat packages-dir "/buffer-move"))
+(require 'buffer-move)
+
+;;-----------------------------------------------------------------
 ;; rainbow mode - Highlights colors within a file, such as "#FF00FF"
 ;; or "rgba(1,2,3,0.5)"
 ;;-----------------------------------------------------------------
