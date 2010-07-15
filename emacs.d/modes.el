@@ -42,6 +42,7 @@
 ;; Based on: http://mihai.bazon.net/projects/editing-javascript-with-emacs-js2-mode
 ;; (Thanks!)
 (defun my-js2-indent-function ()
+  (require 'js-mode)
   (interactive)
   (save-restriction
     (widen)
