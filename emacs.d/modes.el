@@ -42,9 +42,6 @@
 ;; Based on: http://mihai.bazon.net/projects/editing-javascript-with-emacs-js2-mode
 ;; (Thanks!)
 (defun my-js2-indent-function ()
-  (if (not (boundp 'js--proper-indentation))
-      (progn (js-mode)
-             (js2-mode)))
   (interactive)
   (save-restriction
     (widen)
@@ -76,6 +73,11 @@
       (when (> offset 0) (forward-char offset)))))
 
 (defun my-js2-mode-hook ()
+  (if (not (boundp 'js--proper-indentation))
+      (progn (js-mode)
+             (remove-hook 'js2-mode-hook 'my-js2-mode-hook)
+             (js2-mode)
+             (add-hook 'js2-mode-hook 'my-js2-mode-hook)))
   (set (make-local-variable 'indent-line-function) 'my-js2-indent-function)
   (define-key js2-mode-map [(return)] 'newline-and-indent)
   (define-key js2-mode-map [(backspace)] 'c-electric-backspace)
