@@ -42,7 +42,9 @@
 ;; Based on: http://mihai.bazon.net/projects/editing-javascript-with-emacs-js2-mode
 ;; (Thanks!)
 (defun my-js2-indent-function ()
-  (require 'js-mode)
+  (if (not (boundp 'js--proper-indentation))
+      (progn (js-mode)
+             (js2-mode)))
   (interactive)
   (save-restriction
     (widen)
