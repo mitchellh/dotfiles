@@ -37,7 +37,7 @@
      (font-lock-doc-face ((t (:foreground "#888a85"))))
      (font-lock-keyword-face ((t (:foreground "#729fcf" :bold t))))
      (font-lock-string-face ((t (:foreground "#ad7fa8" :italic t))))
-     (font-lock-type-face ((t (:foreground "#8ae234" :bold t))))
+     (font-lock-type-face ((t (:foreground "lime green" :bold t))))
      (font-lock-variable-name-face ((t (:foreground "tomato"))))
      (font-lock-warning-face ((t (:bold t :foreground "#f57900"))))
      (font-lock-function-name-face ((t (:foreground "#edd400" :bold t))))
