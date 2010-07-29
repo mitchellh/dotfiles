@@ -8,6 +8,10 @@
 (add-to-list 'load-path (concat packages-dir "/rainbow-mode"))
 (require 'rainbow-mode)
 
+;; ActionScript mode
+(add-to-list 'load-path (concat packages-dir "/actionscript-mode"))
+(autoload 'actionscript-mode "actionscript-mode" nil t)
+
 ;; Markdown mode
 (add-to-list 'load-path (concat packages-dir "/markdown-mode"))
 (autoload 'markdown-mode "markdown-mode" nil t)
