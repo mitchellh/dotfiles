@@ -128,11 +128,13 @@ alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
+alias gl='git log'
 alias gcp='git cherry-pick'
 alias gco='git checkout'
 
 # Others
 alias brake='bundle exec rake'
+alias bruby='bundle exec ruby'
 alias irb='rlwrap irb'
 
 # Usage: puniq [path]
