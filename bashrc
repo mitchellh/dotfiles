@@ -133,9 +133,8 @@ alias gcp='git cherry-pick'
 alias gco='git checkout'
 
 # Others
-alias brake='bundle exec rake'
-alias bruby='bundle exec ruby'
 alias irb='rlwrap irb'
+alias v='vagrant'
 
 # Usage: puniq [path]
 # Remove duplicate entries from a PATH style value while
