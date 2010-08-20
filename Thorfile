@@ -5,8 +5,8 @@ class Dotfiles < Thor
     File.dirname(__FILE__)
   end
 
-  desc "install [NAME]", "Installs the dotfiles of the given type into your home directory."
-  def install(name=nil)
+  desc "install name", "Installs the dotfiles of the given type into your home directory."
+  def install(name)
     copy = []
     Dir["**/*"].each do |f|
       next if %W[Thorfile README.md].include?(f)
