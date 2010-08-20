@@ -1,0 +1,8 @@
+URxvt*transparent:true
+URxvt*tintColor:blue
+URxvt*shading:40
+URxvt*saveLines:12000
+URxvt*foreground:White
+URxvt*backGround:Black
+URxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=13
+URxvt*scrollBar: false

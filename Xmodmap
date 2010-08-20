@@ -1,0 +1,3 @@
+remove Lock = Caps_Lock
+keysym Caps_Lock = Control_L
+add Control = Control_L
