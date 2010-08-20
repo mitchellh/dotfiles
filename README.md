@@ -7,7 +7,15 @@ the way I want it.
 
     git clone git://github.com/mitchellh/dotfiles.git ~/.dotfiles
     cd ~/.dotfiles
-    thor dotfiles:install
+
+Then use the `thor` task to install whatever you want. The example
+below installs the bash dotfiles:
+
+    thor dotfiles:install bash
+
+Any file or path that matches the name will be installed. So
+`thor dotfiles:install emacs` will install all emacs files, for
+example.
 
 ## Specific Dotfile Docs
 
