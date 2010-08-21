@@ -101,7 +101,7 @@ P="\$"
 
 prompt_simple() {
     unset PROMPT_COMMAND
-    PS1="[\u@\h:\w]\$ "
+    PS1="\W$(parse_git_branch) ⌘ "
     PS2="> "
 }
 
@@ -112,8 +112,12 @@ prompt_compact() {
 }
 
 prompt_color() {
-    PS1="${GREY}[${COLOR1}\u${GREY}@${COLOR2}\h${GREY}:${COLOR1}\W${GREY}]${COLOR2}$P${PS_CLEAR} "
+    PS1="${GREY}\W$(parse_git_branch) ⌘ "
     PS2="\[[33;1m\]continue \[[0m[1m\]> "
+}
+
+parse_git_branch() {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1]/"
 }
 
 #-------------------------------------------------------------------------------
@@ -133,7 +137,6 @@ alias gcp='git cherry-pick'
 alias gco='git checkout'
 
 # Others
-alias irb='rlwrap irb'
 alias v='vagrant'
 
 # Usage: puniq [path]
