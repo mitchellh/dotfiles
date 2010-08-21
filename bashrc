@@ -91,6 +91,7 @@ export PAGER MANPAGER
 RED="\[\033[0;31m\]"
 BROWN="\[\033[0;33m\]"
 GREY="\[\033[0;97m\]"
+GREEN="\[\033[0;32m\]"
 BLUE="\[\033[0;34m\]"
 PS_CLEAR="\[\033[0m\]"
 SCREEN_ESC="\[\033k\033\134\]"
@@ -101,7 +102,7 @@ P="\$"
 
 prompt_simple() {
     unset PROMPT_COMMAND
-    PS1="\W$(parse_git_branch) ⌘ "
+    PS1="\W\$(parse_git_branch) → "
     PS2="> "
 }
 
@@ -112,12 +113,13 @@ prompt_compact() {
 }
 
 prompt_color() {
-    PS1="${GREY}\W$(parse_git_branch) ⌘ "
+    PS1="${GREEN}\W\$(parse_git_branch) → ${GREY}"
     PS2="\[[33;1m\]continue \[[0m[1m\]> "
 }
 
 parse_git_branch() {
-    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1]/"
+    [ -d .git ] || return 1
+    git name-rev HEAD 2> /dev/null | awk "{print \$2 }" | sed 's#\(.*\)#\[\1\]#'
 }
 
 #-------------------------------------------------------------------------------
