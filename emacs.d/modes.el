@@ -16,6 +16,12 @@
 (add-to-list 'load-path (concat packages-dir "/markdown-mode"))
 (autoload 'markdown-mode "markdown-mode" nil t)
 
+;; Haskell mode
+(add-to-list 'load-path (concat packages-dir "/haskell-mode"))
+(load "haskell-site-file")
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+
 ;; HAML/SASS mode
 (add-to-list 'load-path (concat packages-dir "/haml-mode"))
 (autoload 'haml-mode "haml-mode" nil t)
