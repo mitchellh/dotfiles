@@ -28,7 +28,7 @@ unset MAILCHECK
 umask 0022
 
 #-------------------------------------------------------------------------------
-# Path
+# Paths
 #-------------------------------------------------------------------------------
 
 # Various sbins
@@ -38,6 +38,8 @@ PATH="/usr/local/bin:$PATH"
 # Append macports bin (/opt) if on mac
 if [[ `uname` == "Darwin" ]]; then
     PATH="/opt/local/bin:$PATH"
+    PATH="/opt/local/sbin:$PATH"
+    MANPATH="/opt/local/share/man:$MANPATH"
 fi
 
 # ~/bin if it exists
