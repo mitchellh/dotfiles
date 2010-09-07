@@ -10,6 +10,7 @@
 (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Vagrantfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Thorfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
 
 ;; JS
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
