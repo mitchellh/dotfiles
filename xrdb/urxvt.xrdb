@@ -8,8 +8,8 @@ URxvt.urlLauncher: chromium
 URxvt.modifier: mod1
 
 ! appearance
-URxvt.font: xft:Inconsolata:antialias=true
-URxvt.boldFont: xft:Inconsolata:bold:antialias=true
+URxvt.font: xft:Inconsolata:size=10:antialias=true
+URxvt.boldFont: xft:Inconsolata:bold:size=10:antialias=true
 URxvt.internalBorder: 0
 URxvt.jumpScroll: true
 URxvt.secondaryScroll: true
