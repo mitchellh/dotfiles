@@ -1,0 +1,113 @@
+/* zenburn.xrdb --- X resource file for the Zenburn color theme
+   Copyright (C) 2003, 2004  Daniel Brockman       -*- xrdb -*-
+   Copyright (C) 2002  Jani Nurminen               vim:ft=xdefaults:
+
+   Author: Daniel Brockman <daniel@brockman.se>
+   URL: http://www.brockman.se/software/zenburn/look-zenburn.xrdb
+   Updated: 2004-10-11
+
+   This file is released under the GNU General Public License.
+  
+   This file is free software; you can redistribute it and/or
+   modify it under the terms of the GNU General Public License as
+   published by the Free Software Foundation; either version 2, or (at
+   your option) any later version.
+  
+   This file is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   General Public License for more details.
+  
+   To receive a copy of the GNU General Public License, go to
+   <http://www.gnu.org/licenses/#GPL> or write to the Free Software
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+   Description:
+
+     This file defines a set of symbolic constants for use in
+     application-specific resource files, such as `xterm.xrdb'.
+
+     The values of the constants correspond to the Zenburn color theme
+     originally created by Jani Nurminen for Vim.  Jani's color theme,
+     in turn, was based on other color themes for Vim, specifically
+     BlackDust, Camo, and Desert.
+
+   Usage:
+
+     1. Put this file somewhere in your home directory.  You might
+        want to create a separate directory, e.g., `~/.xrdb/', in
+        which to put all X resource files.
+
+     2. Put the line `#include "~/.xrdb/look-zenburn.xrdb"' in your
+        main X resource file (most likely `~/.Xdefaults' or
+        `~/.Xresources').
+
+     3. Obtain or write application-specific X resource files that
+        make use of the symbolic constants defined in this file.
+        Include these files in your main X resource file *after*
+        including this file.
+
+     4. Read the commentary below (particulary the part about fonts).
+
+     5. Restart your X session or run `xrdb -load <resource-file>',
+        where <resource-file> is your main X resource file.
+
+     6. Restart the now themed applications.
+
+   Commentary:
+
+     Currently, this file defines
+
+       * foreground and background colors, and
+
+       * the 16 terminal colors.
+
+     It specifically does *not* define fonts, since this preference
+     varies heavily among users.  Personally, I have the following two
+     lines at the top of my `~/.Xresources' file:
+
+       #define FONT       -*-lucy-medium-*-*-*-10-*-*-*-*-*-*-*
+       #define FONT_BOLD  -*-lucy-bold-*-*-*-10-*-*-*-*-*-*-*
+
+     You can find a link to the Lucy font files below.  The Lucy fonts
+     currently only come in size 10.  If this is too small for your
+     taste, I suggest Lucida Typewriter, from which Lucy is (most
+     likely illegally) derived.  Simply substitute `lucidatypewriter'
+     for `lucy' and `12' for `10'.
+
+     If you need other constants defined in order to apply this color
+     scheme to another application, please let me know.  Likewise, if
+     you have written an X resource file that makes use of these
+     constants, I'd be delighted to help you distribute it.
+
+   See also:
+
+     Application-specific X resource files
+       <http://www.deepwood.net/software/xrdb/>
+
+     Other adaptions of the Zenburn color theme
+       <http://www.deepwood.net/software/zenburn/>
+
+     The Lucy font family
+       <http://www.deepwood.net/software/lucy/>  */
+
+#define COLOR_FG                  #dcdccc
+#define COLOR_BG                  #1f1f1f
+
+#define COLOR_TERM_BLACK          COLOR_BG
+#define COLOR_TERM_DARK_RED       #705050
+#define COLOR_TERM_DARK_GREEN     #60b48a
+#define COLOR_TERM_DARK_YELLOW    #dfaf8f
+#define COLOR_TERM_DARK_BLUE      #506070
+#define COLOR_TERM_DARK_MAGENTA   #dc8cc3
+#define COLOR_TERM_DARK_CYAN      #8cd0d3
+#define COLOR_TERM_LIGHT_GRAY     COLOR_FG
+
+#define COLOR_TERM_DARK_GRAY      #709080
+#define COLOR_TERM_LIGHT_RED      #dca3a3
+#define COLOR_TERM_LIGHT_GREEN    #c3bf9f
+#define COLOR_TERM_LIGHT_YELLOW   #f0dfaf
+#define COLOR_TERM_LIGHT_BLUE     #94bff3
+#define COLOR_TERM_LIGHT_MAGENTA  #ec93d3
+#define COLOR_TERM_LIGHT_CYAN     #93e0e3
+#define COLOR_TERM_WHITE          #ffffff

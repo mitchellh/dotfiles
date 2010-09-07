@@ -6,4 +6,6 @@
 
 # Make caps lock an additional control key
 xmodmap ~/.Xmodmap
+xrdb -merge ~/.Xresources
 exec xmonad
+#exec gnome-session
