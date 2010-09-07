@@ -28,7 +28,7 @@ unset MAILCHECK
 umask 0022
 
 #-------------------------------------------------------------------------------
-# Paths
+# Path
 #-------------------------------------------------------------------------------
 
 # Various sbins
@@ -38,8 +38,8 @@ PATH="/usr/local/bin:$PATH"
 # Append macports bin (/opt) if on mac
 if [[ `uname` == "Darwin" ]]; then
     PATH="/opt/local/bin:$PATH"
-    PATH="/opt/local/sbin:$PATH"
-    MANPATH="/opt/local/share/man:$MANPATH"
+elif [[ `uname` == "Linux" ]]; then
+    PATH="/usr/bin/perlbin/vendor:$PATH"
 fi
 
 # ~/bin if it exists
@@ -80,7 +80,7 @@ HISTCONTROL=ignoreboth
 #-------------------------------------------------------------------------------
 # Editor and Pager
 #-------------------------------------------------------------------------------
-EDITOR=emacs
+EDITOR="emacs -nw"
 export EDITOR
 
 PAGER="less -FirSwX"
@@ -129,7 +129,10 @@ parse_git_branch() {
 #-------------------------------------------------------------------------------
 alias dul='du -h --max-depth=1'
 alias hi='history | tail -20'
-alias ack='ack-grep'
+
+if [[ `uname` == "Darwin" ]]; then
+    alias ack='ack-grep'
+fi
 
 # Git aliases
 alias gs='git status'
@@ -150,11 +153,6 @@ puniq() {
     echo "$1" |tr : '\n' |nl |sort -u -k 2,2 |sort -n |
     cut -f 2- |tr '\n' : |sed -e 's/:$//' -e 's/^://'
 }
-
-#-------------------------------------------------------------------------------
-# Bash completion helpers
-#-------------------------------------------------------------------------------
-source ~/.bash.d/git-completion.bash
 
 #-------------------------------------------------------------------------------
 # RVM
