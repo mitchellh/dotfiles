@@ -1,2 +1,3 @@
 #include ".xrdb/xft.xrdb"
 #include ".xrdb/urxvt.xrdb"
+#include ".xrdb/emacs.xrdb"
