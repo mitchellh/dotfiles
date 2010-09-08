@@ -1,13 +1,14 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.UrgencyHook
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
 
 main = do
   xmproc <- spawnPipe "xmobar /home/mitchellh/.xmobarrc"
-  xmonad $ defaultConfig
+  xmonad $ withUrgencyHook NoUrgencyHook $ defaultConfig
     { terminal = "urxvt"
     , modMask = mod4Mask
     , manageHook = manageDocks <+> manageHook defaultConfig

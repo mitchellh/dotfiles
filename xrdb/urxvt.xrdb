@@ -6,10 +6,11 @@ URxvt.saveLines: 10000
 URxvt.title: urxvt
 URxvt.urlLauncher: chromium
 URxvt.modifier: mod1
+URxvt.urgentOnBell: true
 
 ! appearance
-URxvt.font: xft:Inconsolata:size=10:antialias=true
-URxvt.boldFont: xft:Inconsolata:bold:size=10:antialias=true
+URxvt.font: xft:Inconsolata:size=12:antialias=true
+URxvt.boldFont: xft:Inconsolata:bold:size=12:antialias=true
 URxvt.internalBorder: 0
 URxvt.jumpScroll: true
 URxvt.secondaryScroll: true
