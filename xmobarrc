@@ -2,6 +2,7 @@ Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
        , bgColor = "black"
        , fgColor = "grey"
        , position = TopW L 100
+       , lowerOnStart = True
        , commands = [ Run StdinReader
                     , Run Date "%a %b %_d %l:%M" "date" 10
                     , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
