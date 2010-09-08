@@ -11,6 +11,8 @@ main = do
   xmonad $ withUrgencyHook NoUrgencyHook $ defaultConfig
     { terminal = "urxvt"
     , modMask = mod4Mask
+    , normalBorderColor = "#1F1F1F"
+    , focusedBorderColor = "#2688DE"
     , manageHook = manageDocks <+> manageHook defaultConfig
     , layoutHook = avoidStruts $ layoutHook defaultConfig
     , logHook = dynamicLogWithPP $ xmobarPP
