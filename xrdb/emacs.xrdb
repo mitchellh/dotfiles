@@ -1,0 +1,2 @@
+Emacs*Font: Inconsolata:size=16:antialias=true
+emacs.FontBackend: xft
