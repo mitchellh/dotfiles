@@ -139,7 +139,7 @@ alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
-alias gl='git log'
+alias gl='git prettylog'
 alias gcp='git cherry-pick'
 alias gco='git checkout'
 
