@@ -37,7 +37,7 @@ PATH="/usr/local/bin:$PATH"
 
 # Append macports bin (/opt) if on mac
 if [[ `uname` == "Darwin" ]]; then
-    PATH="/opt/local/bin:$PATH"
+    PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 elif [[ `uname` == "Linux" ]]; then
     PATH="/usr/bin/perlbin/vendor:$PATH"
 fi
@@ -129,10 +129,6 @@ parse_git_branch() {
 #-------------------------------------------------------------------------------
 alias dul='du -h --max-depth=1'
 alias hi='history | tail -20'
-
-if [[ `uname` == "Darwin" ]]; then
-    alias ack='ack-grep'
-fi
 
 # Git aliases
 alias gs='git status'
