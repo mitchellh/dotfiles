@@ -3,8 +3,9 @@
 ;;-----------------------------------------------------------------
 ;; We only do this on Mac since on Linux this is controlled via the
 ;; XRDB resource files.
-(tool-bar-mode -1)
-(toggle-scroll-bar -1)
+(if window-system
+    (progn (tool-bar-mode -1)
+           (toggle-scroll-bar -1)))
 (menu-bar-mode -1)
 
 ;;-----------------------------------------------------------------
