@@ -121,7 +121,7 @@ prompt_color() {
 
 parse_git_branch() {
     [ -d .git ] || return 1
-    git name-rev HEAD 2> /dev/null | awk "{print \$2 }" | sed 's#\(.*\)#\[\1\]#'
+    git symbolic-ref HEAD 2> /dev/null | sed 's#\(.*\)\/\([^\/]*\)$# \2#'
 }
 
 #-------------------------------------------------------------------------------
