@@ -26,3 +26,6 @@
 
 ;; AS3
 (add-to-list 'auto-mode-alist '("\\.as$" . actionscript-mode))
+
+;; Puppet
+(add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))

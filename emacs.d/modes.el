@@ -1,41 +1,45 @@
+;; All the load paths for the modes go here
+(add-to-list 'load-path (concat packages-dir "/buffer-move"))
+(add-to-list 'load-path (concat packages-dir "/rainbow-mode"))
+(add-to-list 'load-path (concat packages-dir "/actionscript-mode"))
+(add-to-list 'load-path (concat packages-dir "/markdown-mode"))
+(add-to-list 'load-path (concat packages-dir "/haskell-mode"))
+(add-to-list 'load-path (concat packages-dir "/haml-mode"))
+(add-to-list 'load-path (concat packages-dir "/js2-mode"))
+(add-to-list 'load-path (concat packages-dir "/puppet-mode"))
+
 ;; Buffer move - A helper to move buffers around when using multiple
 ;; frames.
-(add-to-list 'load-path (concat packages-dir "/buffer-move"))
 (require 'buffer-move)
 
 ;; rainbow mode - Highlights colors within a file, such as "#FF00FF"
 ;; or "rgba(1,2,3,0.5)"
-(add-to-list 'load-path (concat packages-dir "/rainbow-mode"))
 (require 'rainbow-mode)
 
 ;; ActionScript mode
-(add-to-list 'load-path (concat packages-dir "/actionscript-mode"))
 (autoload 'actionscript-mode "actionscript-mode" nil t)
 
 ;; Markdown mode
-(add-to-list 'load-path (concat packages-dir "/markdown-mode"))
 (autoload 'markdown-mode "markdown-mode" nil t)
 
 ;; Haskell mode
-(add-to-list 'load-path (concat packages-dir "/haskell-mode"))
 (load "haskell-site-file")
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
 ;; HAML/SASS mode
-(add-to-list 'load-path (concat packages-dir "/haml-mode"))
 (autoload 'haml-mode "haml-mode" nil t)
 (autoload 'sass-mode "sass-mode" nil t)
+
+;; Puppet mode
+(autoload 'puppet-mode "puppet-mode" nil t)
 
 ;; js-mode (espresso)
 ;; Espresso mode has sane indenting so we use that.
 (setq js-indent-level 2)
 
 ;; JS2-Mode
-(add-to-list 'load-path (concat packages-dir "/js2-mode"))
 (autoload 'js2-mode "js2" nil t)
-
-;; Customize JS2
 (setq js2-basic-offset 2)
 (setq js2-cleanup-whitespace t)
 
@@ -89,3 +93,6 @@
 
 ;; Add the hook so this is all loaded when JS2-mode is loaded
 (add-hook 'js2-mode-hook 'my-js2-mode-hook)
+
+;; Indentation size for java
+(setq c-basic-offset 2)
