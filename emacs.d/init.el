@@ -54,20 +54,6 @@
     (load system-type-config)))
 
 ;; Load user-specific config next
-(let ((user-login-config (concat dotfiles-dir user-login-name ".el")))
+(let ((user-login-config (concat dotfiles-dir (downcase user-login-name) ".el")))
   (if (file-exists-p user-login-config)
     (load user-login-config)))
-
-(provide 'init)
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(safe-local-variable-values (quote ((encoding . utf-8)))))
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- )
