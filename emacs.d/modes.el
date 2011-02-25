@@ -7,6 +7,7 @@
 (add-to-list 'load-path (concat packages-dir "/haml-mode"))
 (add-to-list 'load-path (concat packages-dir "/js2-mode"))
 (add-to-list 'load-path (concat packages-dir "/puppet-mode"))
+(add-to-list 'load-path (concat packages-dir "/scala-mode"))
 
 ;; Buffer move - A helper to move buffers around when using multiple
 ;; frames.
@@ -33,6 +34,9 @@
 
 ;; Puppet mode
 (autoload 'puppet-mode "puppet-mode" nil t)
+
+;; Scala mode
+(require 'scala-mode-auto)
 
 ;; js-mode (espresso)
 ;; Espresso mode has sane indenting so we use that.
