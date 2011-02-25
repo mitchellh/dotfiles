@@ -1,0 +1,33 @@
+# Path to the AWS folder
+export AWS_PATH="$HOME/.aws"
+
+#-------------------------------------------------------------------------------
+# Credentials Function
+#-------------------------------------------------------------------------------
+function aws_credentials {
+    local credential_path="${AWS_PATH}/credentials/setup/$1"
+    if [[ ! -f $credential_path ]]; then
+        echo "Credentials for '$1' do not exist."
+        return
+    fi
+
+    . $credential_path
+}
+
+#-------------------------------------------------------------------------------
+# EC2
+#-------------------------------------------------------------------------------
+# Required variables for the binaries to function
+export EC2_HOME="${AWS_PATH}/ec2"
+
+# Add bin to the path
+PATH="${EC2_HOME}/bin:$PATH"
+
+#-------------------------------------------------------------------------------
+# CloudFormation
+#-------------------------------------------------------------------------------
+# Required variables for the binaries to function
+export AWS_CLOUDFORMATION_HOME="${AWS_PATH}/cloudformation"
+
+# Add bin to the path
+PATH="${AWS_CLOUDFORMATION_HOME}/bin:$PATH"

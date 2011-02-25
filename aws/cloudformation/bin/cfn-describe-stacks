@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+if [ -n "${AWS_CLOUDFORMATION_HOME:+x}" ]; then
+        ${AWS_CLOUDFORMATION_HOME}/bin/cfn-cmd cfn-describe-stacks "$@"
+else
+        echo AWS_CLOUDFORMATION_HOME is not set
+        exit 1
+fi

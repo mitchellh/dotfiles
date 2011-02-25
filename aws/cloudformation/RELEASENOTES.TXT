@@ -1,0 +1,6 @@
+AWS CloudFormation Command Line Tools
+=========================================
+
+AWS CloudFormation CLI version 1.0.6 (API 2010-05-15)
+========================================================================
+* API Version update to 2010-05-15

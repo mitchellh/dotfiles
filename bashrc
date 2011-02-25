@@ -156,10 +156,24 @@ puniq() {
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then source "$HOME/.rvm/scripts/rvm" ; fi
 
 #-------------------------------------------------------------------------------
+# Java Stuff
+#-------------------------------------------------------------------------------
+test -f "$HOME/.java/bashrc" && source "$HOME/.java/bashrc"
+
+#-------------------------------------------------------------------------------
+# AWS Stuff
+#-------------------------------------------------------------------------------
+test -f "$HOME/.aws/bashrc" && source "$HOME/.aws/bashrc"
+
+#-------------------------------------------------------------------------------
 # User Shell Environment
 #-------------------------------------------------------------------------------
 # Set java home
-JAVA_HOME="/usr/lib/jvm/java-6-sun/"
+if [[ `uname` == "Darwin" ]]; then
+    JAVA_HOME=`/usr/libexec/java_home`
+elif [[ `uname` == "Linux" ]]; then
+    JAVA_HOME="/usr/lib/jvm/java-6-sun/"
+fi
 export JAVA_HOME
 
 # Condense path variables
