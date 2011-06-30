@@ -147,7 +147,9 @@ alias gco='git checkout'
 alias v='vagrant'
 
 # Rebind emacs to point to brew version
-alias emacs='/usr/local/Cellar/emacs/23.3/Emacs.app/Contents/MacOS/Emacs -nw'
+emacs_path='/usr/local/Cellar/emacs/23.3/Emacs.app/Contents/MacOS/Emacs'
+test -f $emacs_path &&
+alias emacs="${emacs_path} -nw"
 
 # Usage: puniq [path]
 # Remove duplicate entries from a PATH style value while
