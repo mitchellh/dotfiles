@@ -46,6 +46,10 @@ fi
 test -d "$HOME/bin" &&
 PATH="$HOME/bin:$PATH"
 
+# texbin if it exists for LaTeX stuff
+test -d "/usr/texbin" &&
+PATH="/usr/texbin:$PATH"
+
 #-------------------------------------------------------------------------------
 # Env. Configuration
 #-------------------------------------------------------------------------------
@@ -141,6 +145,9 @@ alias gco='git checkout'
 
 # Others
 alias v='vagrant'
+
+# Rebind emacs to point to brew version
+alias emacs='/usr/local/Cellar/emacs/23.3/Emacs.app/Contents/MacOS/Emacs -nw'
 
 # Usage: puniq [path]
 # Remove duplicate entries from a PATH style value while

@@ -11,6 +11,12 @@
 ;;-----------------------------------------------------------------
 ;; Mac Specific Configuration
 ;;-----------------------------------------------------------------
+;; The command key should be the meta key
+(setq mac-command-modifier 'meta)
+
+;; Fullscreen is a bit different on OS X
+(global-set-key (kbd "M-n") 'ns-toggle-fullscreen)
+
 ;; Copy and Paste
 (defun copy-from-osx ()
   (shell-command-to-string "pbpaste"))
