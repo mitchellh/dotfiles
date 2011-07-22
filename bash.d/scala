@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Scala version to use
+SCALA_VERSION="2.9.0.1"
+
+# Add the current Scala stuff to the path
+PATH="$HOME/.scala/scala-${SCALA_VERSION}/bin:$PATH"

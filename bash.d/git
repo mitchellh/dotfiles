@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Git bash completion
+GIT_VERSION="1.7.6"
+GIT_FILE="/usr/local/Cellar/git/${GIT_VERSION}/etc/bash_completion.d/git-completion.bash"
+test -f $GIT_FILE && source $GIT_FILE

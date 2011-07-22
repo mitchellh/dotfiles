@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Set java home
+if [[ `uname` == "Darwin" ]]; then
+    JAVA_HOME=`/usr/libexec/java_home`
+elif [[ `uname` == "Linux" ]]; then
+    JAVA_HOME="/usr/lib/jvm/java-6-sun/"
+fi
+
+export JAVA_HOME

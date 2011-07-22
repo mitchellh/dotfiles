@@ -35,9 +35,9 @@ umask 0022
 PATH="/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin"
 PATH="/usr/local/bin:$PATH"
 
-# Append macports bin (/opt) if on mac
+# OS-Specific path stuff
 if [[ `uname` == "Darwin" ]]; then
-    PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+    alias emacs="/usr/local/Cellar/emacs/23.3/Emacs.app/Contents/MacOS/Emacs -nw"
 elif [[ `uname` == "Linux" ]]; then
     PATH="/usr/bin/perlbin/vendor:$PATH"
 fi
@@ -160,31 +160,25 @@ puniq() {
 }
 
 #-------------------------------------------------------------------------------
-# RVM
-#-------------------------------------------------------------------------------
-if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then source "$HOME/.rvm/scripts/rvm" ; fi
-
-#-------------------------------------------------------------------------------
-# Java Stuff
-#-------------------------------------------------------------------------------
-test -f "$HOME/.java/bashrc" && source "$HOME/.java/bashrc"
-
-#-------------------------------------------------------------------------------
 # AWS Stuff
 #-------------------------------------------------------------------------------
 test -f "$HOME/.aws/bashrc" && source "$HOME/.aws/bashrc"
 
 #-------------------------------------------------------------------------------
+# Other
+#-------------------------------------------------------------------------------
+# Plugins
+PLUGINS=( "git" "java" "rvm" "scala" )
+
+for plugin in "${PLUGINS[@]}"
+do
+    plugin_path="$HOME/.bash.d/${plugin}"
+    test -f $plugin_path && source $plugin_path
+done
+
+#-------------------------------------------------------------------------------
 # User Shell Environment
 #-------------------------------------------------------------------------------
-# Set java home
-if [[ `uname` == "Darwin" ]]; then
-    JAVA_HOME=`/usr/libexec/java_home`
-elif [[ `uname` == "Linux" ]]; then
-    JAVA_HOME="/usr/lib/jvm/java-6-sun/"
-fi
-export JAVA_HOME
-
 # Condense path variables
 PATH=$(puniq $PATH)
 MANPATH=$(puniq $MANPATH)
@@ -192,4 +186,3 @@ MANPATH=$(puniq $MANPATH)
 # Set default prompt if interactive
 test -n "$PS1" &&
 prompt_color
-
