@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# tmux has completion
+TMUX_FILE="/usr/local/etc/bash_completion.d/tmux"
+test -f $TMUX_FILE && source $TMUX_FILE
