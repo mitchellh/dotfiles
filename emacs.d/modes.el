@@ -1,5 +1,7 @@
 ;; All the load paths for the modes go here
 (add-to-list 'load-path (concat packages-dir "/buffer-move"))
+(add-to-list 'load-path (concat packages-dir "/cython-mode"))
+(add-to-list 'load-path (concat packages-dir "/python-mode"))
 (add-to-list 'load-path (concat packages-dir "/rainbow-mode"))
 (add-to-list 'load-path (concat packages-dir "/actionscript-mode"))
 (add-to-list 'load-path (concat packages-dir "/markdown-mode"))
@@ -37,6 +39,9 @@
 
 ;; Scala mode
 (require 'scala-mode-auto)
+
+;; Cython mode
+(require 'cython-mode)
 
 ;; js-mode (espresso)
 ;; Espresso mode has sane indenting so we use that.

@@ -24,7 +24,7 @@
                            (progn (setq old-fullscreen current-value)
                                   'fullboth)))))
 
-(global-set-key (kbd "M-n") 'toggle-fullscreen)
+(global-set-key (kbd "M-n") 'ns-toggle-fullscreen)
 
 ;; Copy and Paste
 (defun copy-from-osx ()
