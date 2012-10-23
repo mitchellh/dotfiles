@@ -1,12 +1,31 @@
-[user]
-	name = Mitchell Hashimoto
-	email = mitchell.hashimoto@gmail.com
+[alias]
+  prettylog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  update = !gx-update
+  publish = !gx-publish
+
+[color]
+  ui = true
+
+[core]
+	excludesfile = /Users/mitchellh/.gitignore
 
 [github]
 	user = mitchellh
 
-[alias]
-  prettylog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-
-[core]
-	excludesfile = /Users/mitchellh/.gitignore
+[user]
+	name = Mitchell Hashimoto
+	email = mitchell.hashimoto@gmail.com
+[sendemail]
+	smtpencryption = tls
+	smtpserver = smtp.gmail.com
+	smtpuser = mitchell.hashimoto@gmail.com
+	smtpserverport = 587
+	chainreplyto = false
+	aliasesfile = /Users/mitchellh/.gitaliases
+	aliasfiletype = mailrc
+[difftool "Kaleidoscope"]
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
