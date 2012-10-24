@@ -135,21 +135,19 @@ alias dul='du -h --max-depth=1'
 alias hi='history | tail -20'
 
 # Git aliases
-alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
-alias gp='git push'
-alias gl='git prettylog'
-alias gcp='git cherry-pick'
 alias gco='git checkout'
+alias gcp='git cherry-pick'
+alias gdiff='git diff'
+alias gl='git prettylog'
+alias gp='git push'
+alias gs='git status'
+alias gt='git tag'
 
 # Others
+alias be='bundle exec'
 alias v='vagrant'
-
-# Rebind emacs to point to brew version
-emacs_path='/usr/local/Cellar/emacs/23.3/Emacs.app/Contents/MacOS/Emacs'
-test -f $emacs_path &&
-alias emacs="${emacs_path} -nw"
 
 # Usage: puniq [path]
 # Remove duplicate entries from a PATH style value while
