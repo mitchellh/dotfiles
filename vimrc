@@ -1,3 +1,10 @@
+" Installation Instructions
+"	1. Place file in home directory as .vimrc
+"	2. Run the following command in terminal
+"		mkdir .vim .vim/bundle .vim/backup .vim/swap .vim/cache .vim/undo; git clone https://github.com/gmarik/vundle.git .vim/bundle/vundle
+"	3. Launch Vim and Run
+"		:BundleInstall
+"	5. Restart Vim
 set nocompatible
 filetype off
 
