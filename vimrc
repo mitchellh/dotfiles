@@ -24,6 +24,7 @@ Bundle "tpope/vim-markdown"
 " Other plugins
 Bundle "godlygeek/tabular"
 Bundle "kien/ctrlp.vim"
+Bundle "Lokaltog/vim-easymotion"
 Bundle "Lokaltog/vim-powerline"
 Bundle "mileszs/ack.vim"
 Bundle "scrooloose/syntastic"
