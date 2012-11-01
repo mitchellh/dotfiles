@@ -9,12 +9,21 @@
 [core]
 	excludesfile = /Users/mitchellh/.gitignore
 
+[difftool "Kaleidoscope"]
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+
+[difftool]
+	prompt = false
+
+[diff]
+	tool = Kaleidoscope
+
 [github]
 	user = mitchellh
 
-[user]
-	name = Mitchell Hashimoto
-	email = mitchell.hashimoto@gmail.com
+[push]
+	default = tracking
+
 [sendemail]
 	smtpencryption = tls
 	smtpserver = smtp.gmail.com
@@ -23,9 +32,7 @@
 	chainreplyto = false
 	aliasesfile = /Users/mitchellh/.gitaliases
 	aliasfiletype = mailrc
-[difftool "Kaleidoscope"]
-	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
-[difftool]
-	prompt = false
-[diff]
-	tool = Kaleidoscope
+
+[user]
+	name = Mitchell Hashimoto
+	email = mitchell.hashimoto@gmail.com
