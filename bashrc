@@ -50,6 +50,10 @@ PATH="$HOME/bin:$PATH"
 test -d "/usr/texbin" &&
 PATH="/usr/texbin:$PATH"
 
+# Heroku toolbelt
+test -d "/usr/local/heroku/bin" &&
+PATH="/usr/local/heroku/bin:$PATH"
+
 #-------------------------------------------------------------------------------
 # Env. Configuration
 #-------------------------------------------------------------------------------
@@ -84,7 +88,7 @@ HISTCONTROL=ignoreboth
 #-------------------------------------------------------------------------------
 # Editor and Pager
 #-------------------------------------------------------------------------------
-EDITOR="emacs -nw"
+EDITOR="vim"
 export EDITOR
 
 PAGER="less -FirSwX"
