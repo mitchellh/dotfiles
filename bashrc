@@ -170,12 +170,12 @@ test -f "$HOME/.aws/bashrc" && source "$HOME/.aws/bashrc"
 # Other
 #-------------------------------------------------------------------------------
 # Plugins
-PLUGINS=( "git" "java" "rbenv" "scala" "tmux" )
+PLUGINS=( "git" "go" "go_crosscompile" "java" "rbenv" "scala" "tmux" )
 
 for plugin in "${PLUGINS[@]}"
 do
-    plugin_path="$HOME/.bash.d/${plugin}"
-    test -f $plugin_path && source $plugin_path
+  plugin_path="$HOME/.bash.d/${plugin}"
+  test -f $plugin_path && source $plugin_path
 done
 
 #-------------------------------------------------------------------------------
