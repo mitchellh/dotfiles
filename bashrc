@@ -170,7 +170,7 @@ test -f "$HOME/.aws/bashrc" && source "$HOME/.aws/bashrc"
 # Other
 #-------------------------------------------------------------------------------
 # Plugins
-PLUGINS=( "git" "java" "rvm" "scala" "tmux" )
+PLUGINS=( "git" "java" "rbenv" "scala" "tmux" )
 
 for plugin in "${PLUGINS[@]}"
 do

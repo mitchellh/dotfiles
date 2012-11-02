@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# This sets up rbenv properly.
+
+RBENV_BIN="$HOME/.rbenv/bin"
+
+if [ -d "${RBENV_BIN}" ]; then
+  # Add it to the path
+  export PATH="${RBENV_BIN}:$PATH"
+
+  # Enable shims
+  eval "$(rbenv init -)"
+fi
