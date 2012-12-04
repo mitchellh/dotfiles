@@ -16,8 +16,10 @@ Bundle 'gmarik/vundle'
 
 " Language plugins
 Bundle "empanda/vim-varnish"
+Bundle "groenewege/vim-less"
 Bundle "Glench/Vim-Jinja2-Syntax"
 Bundle 'jnwhiteh/vim-golang'
+Bundle "PProvost/vim-ps1"
 Bundle "rodjek/vim-puppet"
 Bundle "tpope/vim-markdown"
 
