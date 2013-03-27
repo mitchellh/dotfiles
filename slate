@@ -49,11 +49,19 @@ layout 1coding 'Spotify':REPEAT ${full}
 layout 1coding 'Textual':REPEAT move ${sox}+550;${soy}+75 800;575
 layout 1coding 'Tweetbot' move ${ssx}-480-40;${soy} 480;${ssy}
 
+# This layout is used with two screens
+layout 2coding 'iTerm':REPEAT ${full} 0
+layout 2coding 'MacVim':REPEAT ${full} 0
+layout 2coding 'Spotify':REPEAT ${full} 1
+layout 2coding 'Textual':REPEAT move ${sox}+1200;${soy}+20 800;575 0
+layout 2coding 'Tweetbot' move ${ssx}-480-40;${soy}+20 480;1000 0
+
 #--------------------------------------------------------------------
 # Bindings
 #--------------------------------------------------------------------
 # Activate layouts, this is all done via modal-keys
 bind 1:${modal-key} sequence layout 1coding
+bind 2:${modal-key} sequence layout 2coding
 
 # Focus windows in certain directions
 bind h:cmd,shift focus left
