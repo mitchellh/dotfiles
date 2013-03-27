@@ -1,0 +1,48 @@
+# Configuration options
+config defaultToCurrentScreen true
+config modalEscapeKey esc
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+config windowHintsSpreadSearchWidth 200
+config windowHintsSpreadSearchHeight 200
+
+#--------------------------------------------------------------------
+# Aliases
+#--------------------------------------------------------------------
+# Modal key
+alias modal-key w,shift,cmd
+
+# Easy helpers for long variable names...
+alias sox screenOriginX
+alias soy screenOriginY
+alias ssx screenSizeX
+alias ssy screenSizeY
+
+# Positioning aliases
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+
+# This layout is used when I'm coding
+layout 1coding 'iTerm':REPEAT move screenOriginX+(screenSizeX*0.60);screenOriginY screenSizeX*0.40;screenSizeY
+layout 1coding 'MacVim':REPEAT move screenOriginX;screenOriginY screenSizeX*0.60;screenSizeY
+layout 1coding 'Spotify':REPEAT ${full}
+layout 1coding 'Textual':REPEAT move screenOriginX+550;screenOriginY+75 800;575
+layout 1coding 'Tweetbot' move ${ssx}-480-40;${soy} 480;${ssy}
+
+#--------------------------------------------------------------------
+# Bindings
+#--------------------------------------------------------------------
+# Show window hints for quick switching
+bind e:cmd hint
+
+# Activate layouts, this is all done via modal-keys
+bind 1:${modal-key} sequence layout 1coding
+bind f:${modal-key} ${full}
+
+# Focus windows in certain directions
+bind h:cmd,shift focus left
+bind l:cmd,shift focus right
+bind j:cmd,shift focus up
+bind k:cmd,shift focus down
