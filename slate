@@ -39,7 +39,10 @@ alias top-right-corner move ${sox}+${ssx}/2;${soy} ${ssx}/2;${ssy}/2
 alias bot-left-corner move ${sox};${soy}+${ssy}/2 ${ssx}/2;${ssy}/2
 alias bot-right-corner move ${sox}+${ssx}/2;${soy}+${ssy}/2 ${ssx}/2;${ssy}/2
 
-# This layout is used when I'm coding
+#--------------------------------------------------------------------
+# Layouts
+#--------------------------------------------------------------------
+# This layout is used with one screen
 layout 1coding 'iTerm':REPEAT ${full}
 layout 1coding 'MacVim':REPEAT ${full}
 layout 1coding 'Spotify':REPEAT ${full}
