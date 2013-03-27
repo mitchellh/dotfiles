@@ -15,10 +15,12 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Language plugins
+Bundle "bryanjswift/vim-rust"
 Bundle "empanda/vim-varnish"
 Bundle "groenewege/vim-less"
 Bundle "Glench/Vim-Jinja2-Syntax"
 Bundle 'jnwhiteh/vim-golang'
+Bundle "kchmck/vim-coffee-script"
 Bundle "PProvost/vim-ps1"
 Bundle "rodjek/vim-puppet"
 Bundle "tpope/vim-markdown"
@@ -30,6 +32,7 @@ Bundle "Lokaltog/vim-easymotion"
 Bundle "Lokaltog/vim-powerline"
 Bundle "mileszs/ack.vim"
 Bundle "scrooloose/syntastic"
+Bundle "tpope/vim-eunuch"
 Bundle "tpope/vim-fugitive"
 
 " Personal bundles

@@ -7,3 +7,6 @@ GOROOT="$HOME/go"
 
 test -d ${GOROOT} &&
 export PATH="${GOROOT}/bin:$PATH"
+
+export GOPATH="$HOME/code/go"
+mkdir -p $GOPATH

@@ -1,3 +1,4 @@
 --color
 
 --type-set=puppet=.pp
+--type-set=rust=.rs
