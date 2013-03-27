@@ -43,6 +43,7 @@ alias bot-right-corner move ${sox}+${ssx}/2;${soy}+${ssy}/2 ${ssx}/2;${ssy}/2
 # Layouts
 #--------------------------------------------------------------------
 # This layout is used with one screen
+layout 2coding 'Google Chrome':REPEAT ${full}
 layout 1coding 'iTerm':REPEAT ${full}
 layout 1coding 'MacVim':REPEAT ${full}
 layout 1coding 'Spotify':REPEAT ${full}
@@ -50,6 +51,7 @@ layout 1coding 'Textual':REPEAT move ${sox}+550;${soy}+75 800;575
 layout 1coding 'Tweetbot' move ${ssx}-480-40;${soy} 480;${ssy}
 
 # This layout is used with two screens
+layout 2coding 'Google Chrome':REPEAT move ${sox}+387;${soy}+100 1800;1200 0
 layout 2coding 'iTerm':REPEAT ${full} 0
 layout 2coding 'MacVim':REPEAT ${full} 0
 layout 2coding 'Spotify':REPEAT ${full} 1
