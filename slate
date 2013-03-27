@@ -22,13 +22,13 @@ alias ssx screenSizeX
 alias ssy screenSizeY
 
 # Positioning aliases
-alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias full move ${sox};${soy} ${ssx};${ssy}
 
 # This layout is used when I'm coding
-layout 1coding 'iTerm':REPEAT move screenOriginX+(screenSizeX*0.60);screenOriginY screenSizeX*0.40;screenSizeY
-layout 1coding 'MacVim':REPEAT move screenOriginX;screenOriginY screenSizeX*0.60;screenSizeY
+layout 1coding 'iTerm':REPEAT ${full}
+layout 1coding 'MacVim':REPEAT ${full}
 layout 1coding 'Spotify':REPEAT ${full}
-layout 1coding 'Textual':REPEAT move screenOriginX+550;screenOriginY+75 800;575
+layout 1coding 'Textual':REPEAT move ${sox}+550;${soy}+75 800;575
 layout 1coding 'Tweetbot' move ${ssx}-480-40;${soy} 480;${ssy}
 
 #--------------------------------------------------------------------
