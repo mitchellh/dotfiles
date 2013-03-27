@@ -43,7 +43,7 @@ alias bot-right-corner move ${sox}+${ssx}/2;${soy}+${ssy}/2 ${ssx}/2;${ssy}/2
 # Layouts
 #--------------------------------------------------------------------
 # This layout is used with one screen
-layout 2coding 'Google Chrome':REPEAT ${full}
+layout 1coding 'Google Chrome':REPEAT ${full}
 layout 1coding 'iTerm':REPEAT ${full}
 layout 1coding 'MacVim':REPEAT ${full}
 layout 1coding 'Spotify':REPEAT ${full}
