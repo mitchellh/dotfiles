@@ -15,6 +15,13 @@ config windowHintsSpreadSearchHeight 200
 # Modal key
 alias modal-key w,shift,cmd
 
+# Some apps
+alias app-browser 'Google Chrome'
+alias app-editor 'MacVim'
+alias app-irc 'Textual'
+alias app-music 'Spotify'
+alias app-terminal 'iTerm'
+
 # Easy helpers for long variable names...
 alias sox screenOriginX
 alias soy screenOriginY
@@ -23,7 +30,7 @@ alias ssy screenSizeY
 
 # Positioning aliases
 alias full move ${sox};${soy} ${ssx};${ssy}
-alias left-half move ${sox};${soy} ${ssx}/2;${ssy}
+alias left-half move ${sox};${soy} ${ssx}/2+1;${ssy}
 alias right-half move ${sox}+${ssx}/2;${soy} ${ssx}/2;${ssy}
 alias top-half move ${sox};${soy} ${ssx};${ssy}/2
 alias bot-half move ${sox};${soy}+${ssy}/2 ${ssx};${ssy}/2
@@ -42,9 +49,6 @@ layout 1coding 'Tweetbot' move ${ssx}-480-40;${soy} 480;${ssy}
 #--------------------------------------------------------------------
 # Bindings
 #--------------------------------------------------------------------
-# Show window hints for quick switching
-bind e:cmd hint
-
 # Activate layouts, this is all done via modal-keys
 bind 1:${modal-key} sequence layout 1coding
 
@@ -64,3 +68,11 @@ bind u:cmd,ctrl ${top-left-corner}
 bind i:cmd,ctrl ${top-right-corner}
 bind n:cmd,ctrl ${bot-left-corner}
 bind m:cmd,ctrl ${bot-right-corner}
+
+# Focus helpers
+bind b:e,cmd focus ${app-browser}
+bind e:e,cmd focus ${app-editor}
+bind i:e,cmd focus ${app-irc}
+bind m:e,cmd focus ${app-music}
+bind t:e,cmd focus ${app-terminal}
+bind /:e,cmd hint
