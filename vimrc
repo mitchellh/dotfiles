@@ -18,7 +18,7 @@ endif
 
 execute "set rtp+=" . vim_home_path . "/bundle/vundle/"
 let g:vundle_default_git_proto = 'git'
-call vundle#rc()
+call vundle#rc(vim_home_path. "/bundle")
 
 Bundle 'gmarik/vundle'
 
