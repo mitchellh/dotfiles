@@ -10,15 +10,15 @@ filetype off
 
 if has("win32")
     " We're on Windows.
-    let vim_home_path = "~/vimfiles"
+    let g:vim_home_path = "~/vimfiles"
 else
     " We're on some POSIX system, hopefully.
-    let vim_home_path = "~/.vim"
+    let g:vim_home_path = "~/.vim"
 endif
 
-execute "set rtp+=" . vim_home_path . "/bundle/vundle/"
+execute "set rtp+=" . g:vim_home_path . "/bundle/vundle/"
 let g:vundle_default_git_proto = 'https'
-call vundle#rc(vim_home_path. "/bundle")
+call vundle#rc(g:vim_home_path. "/bundle")
 
 Bundle 'gmarik/vundle'
 
@@ -51,6 +51,6 @@ Bundle 'mitchellh/vim-misc'
 filetype plugin indent on
 
 " Load in my custom vimrc if it exists
-if filereadable(expand(vim_home_path . "/bundle/vim-misc/vimrc.vim"))
-    execute "source " . vim_home_path . "/bundle/vim-misc/vimrc.vim"
+if filereadable(expand(g:vim_home_path . "/bundle/vim-misc/vimrc.vim"))
+    execute "source " . g:vim_home_path . "/bundle/vim-misc/vimrc.vim"
 endif
