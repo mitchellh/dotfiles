@@ -68,8 +68,8 @@ bind 2:${modal-key} sequence layout 2coding
 # Focus windows in certain directions
 bind h:cmd,shift focus left
 bind l:cmd,shift focus right
-bind j:cmd,shift focus up
-bind k:cmd,shift focus down
+bind j:cmd,shift focus down
+bind k:cmd,shift focus up
 
 # Move windows to certain locations on the screen
 bind f:cmd,ctrl ${full}
