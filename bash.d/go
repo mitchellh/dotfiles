@@ -3,7 +3,7 @@
 # This checks if go has been installed and adds it to the path
 # if it has.
 
-GOROOT="$HOME/go"
+export GOROOT="$HOME/go"
 
 test -d ${GOROOT} &&
 export PATH="${GOROOT}/bin:$PATH"

@@ -1,4 +1,5 @@
 --color
 
+--type-set=asciidoc=.asc
 --type-set=puppet=.pp
 --type-set=rust=.rs

@@ -16,6 +16,11 @@ else
     let g:vim_home_path = "~/.vim"
 endif
 
+" Golang stuff
+if isdirectory($GOROOT)
+    set runtimepath+=$GOROOT/misc/vim
+endif
+
 execute "set rtp+=" . g:vim_home_path . "/bundle/vundle/"
 let g:vundle_default_git_proto = 'https'
 call vundle#rc(g:vim_home_path. "/bundle")
@@ -27,7 +32,6 @@ Bundle "bryanjswift/vim-rust"
 Bundle "empanda/vim-varnish"
 Bundle "groenewege/vim-less"
 Bundle "Glench/Vim-Jinja2-Syntax"
-Bundle 'jnwhiteh/vim-golang'
 Bundle "kchmck/vim-coffee-script"
 Bundle "PProvost/vim-ps1"
 Bundle "rodjek/vim-puppet"

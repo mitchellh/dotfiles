@@ -7,7 +7,7 @@
   ui = true
 
 [core]
-	excludesfile = /Users/mitchellh/.gitignore
+	excludesfile = /opt/boxen/config/git/gitignore
 
 [difftool "Kaleidoscope"]
 	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
@@ -36,3 +36,6 @@
 [user]
 	name = Mitchell Hashimoto
 	email = mitchell.hashimoto@gmail.com
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential
