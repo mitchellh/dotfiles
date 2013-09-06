@@ -3,10 +3,10 @@
 # This checks if go has been installed and adds it to the path
 # if it has.
 
-export GOROOT="$HOME/go"
-
-test -d ${GOROOT} &&
-export PATH="${GOROOT}/bin:$PATH"
-
 export GOPATH="$HOME/code/go"
 mkdir -p $GOPATH
+export PATH="${GOPATH}/bin:$PATH"
+
+export GOROOT="$HOME/go"
+test -d ${GOROOT} &&
+export PATH="${GOROOT}/bin:$PATH"

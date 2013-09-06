@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+# This adds depot_tools to the shell
+
+DEPOT_TOOLS_PATH="$HOME/depot_tools"
+
+test -d ${DEPOT_TOOLS_PATH} &&
+export PATH="${DEPOT_TOOLS_PATH}:$PATH"

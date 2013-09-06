@@ -170,7 +170,7 @@ test -f "$HOME/.aws/bashrc" && source "$HOME/.aws/bashrc"
 # Other
 #-------------------------------------------------------------------------------
 # Plugins
-PLUGINS=( "autojump" "git" "go" "go_crosscompile" "java" "rbenv" "scala" "tmux" )
+PLUGINS=( "autojump" "depot_tools" "git" "go" "go_crosscompile" "java" "rbenv" "scala" "tmux" )
 
 for plugin in "${PLUGINS[@]}"
 do
@@ -188,3 +188,6 @@ MANPATH=$(puniq $MANPATH)
 # Set default prompt if interactive
 test -n "$PS1" &&
 prompt_color
+
+# added by travis gem
+source /Users/mitchellh/.travis/travis.sh

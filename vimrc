@@ -29,6 +29,7 @@ Bundle 'gmarik/vundle'
 
 " Language plugins
 Bundle "bryanjswift/vim-rust"
+Bundle "elzr/vim-json"
 Bundle "empanda/vim-varnish"
 Bundle "groenewege/vim-less"
 Bundle "Glench/Vim-Jinja2-Syntax"
@@ -38,11 +39,13 @@ Bundle "rodjek/vim-puppet"
 Bundle "tpope/vim-markdown"
 
 " Other plugins
+Bundle "airblade/vim-gitgutter"
 Bundle "godlygeek/tabular"
 Bundle "kien/ctrlp.vim"
 Bundle "Lokaltog/vim-easymotion"
 Bundle "Lokaltog/vim-powerline"
 Bundle "mileszs/ack.vim"
+Bundle "mhinz/vim-startify"
 Bundle "scrooloose/syntastic"
 Bundle "tpope/vim-eunuch"
 Bundle "tpope/vim-fugitive"
