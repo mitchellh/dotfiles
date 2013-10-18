@@ -1,7 +1,5 @@
 [alias]
   prettylog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-  update = !gx-update
-  publish = !gx-publish
 
 [color]
   ui = true
@@ -37,5 +35,5 @@
 	name = Mitchell Hashimoto
 	email = mitchell.hashimoto@gmail.com
 
-[credential]
-helper = /opt/boxen/bin/boxen-git-credential
+[branch]
+	autosetuprebase = always

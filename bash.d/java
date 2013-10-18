@@ -2,7 +2,7 @@
 
 # Set java home
 if [[ `uname` == "Darwin" ]]; then
-    JAVA_HOME=`/usr/libexec/java_home`
+    JAVA_HOME=`/usr/libexec/java_home 2>/dev/null`
 elif [[ `uname` == "Linux" ]]; then
     JAVA_HOME="/usr/lib/jvm/java-6-sun/"
 fi

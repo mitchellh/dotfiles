@@ -27,6 +27,9 @@ unset MAILCHECK
 # default umask
 umask 0022
 
+# Terminal type
+export TERM=xterm-256color
+
 #-------------------------------------------------------------------------------
 # Path
 #-------------------------------------------------------------------------------
@@ -170,7 +173,7 @@ test -f "$HOME/.aws/bashrc" && source "$HOME/.aws/bashrc"
 # Other
 #-------------------------------------------------------------------------------
 # Plugins
-PLUGINS=( "autojump" "depot_tools" "git" "go" "go_crosscompile" "java" "rbenv" "scala" "tmux" )
+PLUGINS=( "autojump" "depot_tools" "git" "go" "java" "rbenv" "scala" "tmux" )
 
 for plugin in "${PLUGINS[@]}"
 do
@@ -189,5 +192,7 @@ MANPATH=$(puniq $MANPATH)
 test -n "$PS1" &&
 prompt_color
 
-# added by travis gem
-source /Users/mitchellh/.travis/travis.sh
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
