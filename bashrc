@@ -182,7 +182,7 @@ puniq() {
 # Other
 #-------------------------------------------------------------------------------
 # Plugins
-PLUGINS=( "autojump" "depot_tools" "git" "go" "java" "rbenv" "scala" "tmux" "windows" )
+PLUGINS=( "depot_tools" "git" "go" "java" "rbenv" "scala" "tmux" "windows" )
 
 for plugin in "${PLUGINS[@]}"
 do
@@ -207,8 +207,3 @@ esac
 # Set default prompt if interactive
 test -n "$PS1" &&
 prompt_color
-
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
