@@ -28,15 +28,29 @@ unset MAILCHECK
 umask 0022
 
 # Terminal type
-export TERM=xterm-256color
+case $UNAME in
+    CYGWIN* | MINGW32*)
+        export TERM=cygwin
+        ;;
+    *)
+        export TERM=xterm-256color
+        ;;
+esac
 
 #-------------------------------------------------------------------------------
 # Path
 #-------------------------------------------------------------------------------
 
-# Various sbins
-PATH="/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin"
-PATH="/usr/local/bin:$PATH"
+case $UNAME in
+    MINGW32*)
+        # Don't touch the default PATH, it inherits Windows.
+        ;;
+    *)
+        # Various sbins
+        PATH="/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin"
+        PATH="/usr/local/bin:$PATH"
+        ;;
+esac
 
 # OS-Specific path stuff
 if [[ `uname` == "Darwin" ]]; then
@@ -184,9 +198,16 @@ done
 #-------------------------------------------------------------------------------
 # User Shell Environment
 #-------------------------------------------------------------------------------
-# Condense path variables
-PATH=$(puniq $PATH)
-MANPATH=$(puniq $MANPATH)
+case $UNAME in
+    MINGW32*)
+        # Don't condense path, since function doesn't work here.
+        ;;
+    *)
+        # Condense path variables
+        PATH=$(puniq $PATH)
+        MANPATH=$(puniq $MANPATH)
+        ;;
+esac
 
 # Set default prompt if interactive
 test -n "$PS1" &&
