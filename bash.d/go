@@ -7,6 +7,14 @@ export GOPATH="$HOME/code/go"
 mkdir -p $GOPATH
 export PATH="${GOPATH}/bin:$PATH"
 
-export GOROOT="$HOME/go"
-test -d ${GOROOT} &&
-export PATH="${GOROOT}/bin:$PATH"
+if [[ -d "$HOME/go" ]]; then
+    export GOROOT="$HOME/go"
+    test -d ${GOROOT} &&
+        export PATH="${GOROOT}/bin:$PATH"
+fi
+
+if [[ -d "$HOME/code/3rdparty/go" ]]; then
+    export GOROOT="$HOME/code/3rdparty/go"
+    test -d ${GOROOT} &&
+        export PATH="${GOROOT}/bin:$PATH"
+fi
