@@ -8,6 +8,10 @@ case $UNAME in
         # Add an alias to access gvim in a more sane way
         alias gvim="/cygdrive/c/Program\ Files\ \(x86\)/vim/bin/gvim.bat"
         ;;
+    MINGW32*)
+        # Add bsdtar to the PATH
+        PATH="/c/Program Files (x86)/GnuWin32/bin:$PATH"
+        ;;
     *)
         ;;
 esac
