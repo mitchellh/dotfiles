@@ -3,6 +3,8 @@
 # This installation is destructive, as it removes exisitng files/directories.
 # Use at your own risk.
 
+UNAME=$(uname)
+
 for name in *; do
   if [ ! $name == "README.md" -a ! $name == "install.sh" ]; then
     target="$HOME/.$name"
@@ -13,7 +15,15 @@ for name in *; do
       rm -rf $target
     fi
 
-    ln -s "$PWD/$name" "$target"
-    echo "Linked $PWD/$name to $target."
+    case $UNAME in
+        CYGWIN* | MINGW32*)
+            cp -R "$PWD/$name" "$target"
+            echo "Copied $PWD/$name to $target."
+            ;;
+        *)
+            ln -s "$PWD/$name" "$target"
+            echo "Linked $PWD/$name to $target."
+            ;;
+    esac
   fi
 done
