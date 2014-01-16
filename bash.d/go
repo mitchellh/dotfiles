@@ -18,3 +18,11 @@ if [[ -d "$HOME/code/3rdparty/go" ]]; then
     test -d ${GOROOT} &&
         export PATH="${GOROOT}/bin:$PATH"
 fi
+
+case $UNAME in
+    CYGWIN*)
+        # In Cygwin, make sure that paths are real Windows paths
+        GOPATH="$(cygpath -w $GOPATH)"
+        GOROOT="$(cygpath -w $GOROOT)"
+        ;;
+esac
