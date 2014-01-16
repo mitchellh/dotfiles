@@ -1,0 +1,13 @@
+# This sets some stuff up for Windows
+
+case $UNAME in
+    CYGWIN*)
+        # Setup the path to have some core Windows stuff
+        PATH="$(cygpath "C:\Windows"):$PATH"
+
+        # Add an alias to access gvim in a more sane way
+        alias gvim="/cygdrive/c/Program\ Files\ \(x86\)/vim/bin/gvim.bat"
+        ;;
+    *)
+        ;;
+esac

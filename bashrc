@@ -179,15 +179,10 @@ puniq() {
 }
 
 #-------------------------------------------------------------------------------
-# AWS Stuff
-#-------------------------------------------------------------------------------
-test -f "$HOME/.aws/bashrc" && source "$HOME/.aws/bashrc"
-
-#-------------------------------------------------------------------------------
 # Other
 #-------------------------------------------------------------------------------
 # Plugins
-PLUGINS=( "autojump" "depot_tools" "git" "go" "java" "rbenv" "scala" "tmux" )
+PLUGINS=( "autojump" "depot_tools" "git" "go" "java" "rbenv" "scala" "tmux" "windows" )
 
 for plugin in "${PLUGINS[@]}"
 do
