@@ -231,3 +231,17 @@ esac
 # Set default prompt if interactive
 test -n "$PS1" &&
 prompt_color
+
+if [ -f "$HOME/.rvm/scripts/rvm" ]; then
+    source $HOME/.rvm/scripts/rvm
+fi
+
+# Always put /usr/bin first.
+case $UNAME in
+    MINGW32*)
+        ;;
+    *)
+        # Various sbins
+        PATH="/usr/bin:$PATH"
+        ;;
+esac

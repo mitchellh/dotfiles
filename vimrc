@@ -29,15 +29,18 @@ Bundle 'gmarik/vundle'
 
 " Language plugins
 Bundle "bryanjswift/vim-rust"
+Bundle "cespare/vim-toml"
 Bundle "elzr/vim-json"
 Bundle "empanda/vim-varnish"
 Bundle "groenewege/vim-less"
+Bundle "fatih/vim-go"
 Bundle "Glench/Vim-Jinja2-Syntax"
 Bundle "kchmck/vim-coffee-script"
 Bundle "PProvost/vim-ps1"
 Bundle "rodjek/vim-puppet"
 Bundle "tpope/vim-markdown"
 Bundle "nono/vim-handlebars"
+Bundle "wting/rust.vim"
 
 " Other plugins
 Bundle "airblade/vim-gitgutter"
