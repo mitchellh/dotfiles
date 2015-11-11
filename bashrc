@@ -242,6 +242,8 @@ case $UNAME in
         ;;
     *)
         # Various sbins
-        PATH="/usr/bin:$PATH"
+        PATH="/usr/bin:/usr/local/bin:$PATH"
         ;;
 esac
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
