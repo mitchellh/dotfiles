@@ -102,6 +102,9 @@ export FTP_PASSIVE
 FIGNORE="~:CVS:#:.pyc"
 HISTCONTROL=ignoreboth
 
+# XDG config
+export XDG_CONFIG_HOME="$HOME"
+
 #-------------------------------------------------------------------------------
 # Editor and Pager
 #-------------------------------------------------------------------------------

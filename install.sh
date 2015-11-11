@@ -7,7 +7,11 @@ UNAME=$(uname)
 
 for name in *; do
   if [ ! $name == "README.md" -a ! $name == "install.sh" ]; then
-    target="$HOME/.$name"
+    target="$name"
+    if [ ! $name == "nvim" ]; then
+        target=".$name"
+    fi
+    target="$HOME/$target"
 
     if [ -h $target ]; then
       rm $target

@@ -1,4 +1,6 @@
 irssi/config
 emacs.d/backups
 emacs.d/auto-save-list
+nvim/plugged
+nvim/undo
 *.elc
