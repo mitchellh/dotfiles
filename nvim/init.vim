@@ -18,6 +18,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'mhinz/vim-startify'
 Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-fugitive'
+Plug 'vim-scripts/tcd.vim'
 call plug#end()
 
 "----------------------------------------------------------------------
@@ -41,6 +42,10 @@ set splitbelow            " Splits show up below by default
 set splitright            " Splits go to the right by default
 set title                 " Set the title for gvim
 set visualbell            " Use a visual bell to notify us
+
+" Customize session options. Namely, I don't want to save hidden and
+" unloaded buffers or empty windows.
+set sessionoptions="curdir,folds,help,options,tabpages,winsize"
 
 if !has("win32")
     set showbreak=↪           " The character to put to show a line has been wrapped
@@ -183,7 +188,7 @@ endif
 
 " Tabs
 map <C-t> :tabnew<CR>
-map <C-BS> :tabclose<CR>
+map <C-c> :tabclose<CR>
 map <C-[> :tabprevious<CR>
 map <C-]> :tabnext<CR>
 
