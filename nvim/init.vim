@@ -14,8 +14,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'fatih/vim-go'
 Plug 'gcmt/taboo.vim'
+Plug 'kien/ctrlp.vim'
 Plug 'mhinz/vim-startify'
 Plug 'plasticboy/vim-markdown'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 "----------------------------------------------------------------------
@@ -128,13 +130,22 @@ nmap <leader>cd :cd %:h<CR>
 nmap <leader>lcd :lcd %:h<CR>
 
 " Shortcut to edit the vimrc
-nmap <silent> <leader>vimrc :e ~/.vimrc<CR>
+if has("nvim")
+    nmap <silent> <leader>vimrc :e ~/nvim/init.vim<CR>
+else
+    nmap <silent> <leader>vimrc :e ~/.vimrc<CR>
+endif
 
 " Make navigating around splits easier
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-h> <C-w>h
-map <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+if has('nvim')
+  " We have to do this to fix a bug with Neovim on OS X where C-h
+  " is sent as backspace for some reason.
+  nnoremap <BS> <C-W>h
+endif
 
 " Navigating tabs easier
 map <D-S-{> :tabprevious
@@ -169,6 +180,12 @@ if has("nvim")
     tnoremap JK <C-\><C-n>
     nnoremap <Leader>c :terminal <CR>
 endif
+
+" Tabs
+map <C-t> :tabnew<CR>
+map <C-BS> :tabclose<CR>
+map <C-[> :tabprevious<CR>
+map <C-]> :tabnext<CR>
 
 " CtrlP
 nnoremap <leader>t :CtrlP<cr>
