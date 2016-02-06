@@ -11,12 +11,15 @@ set encoding=utf-8
 "----------------------------------------------------------------------
 call plug#begin('~/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go'
 Plug 'gcmt/taboo.vim'
-Plug 'kien/ctrlp.vim'
 Plug 'mhinz/vim-startify'
 Plug 'plasticboy/vim-markdown'
+Plug 'rodjek/vim-puppet'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/tcd.vim'
 call plug#end()
