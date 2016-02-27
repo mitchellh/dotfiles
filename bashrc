@@ -108,7 +108,7 @@ export XDG_CONFIG_HOME="$HOME"
 #-------------------------------------------------------------------------------
 # Editor and Pager
 #-------------------------------------------------------------------------------
-EDITOR="vim"
+EDITOR="nvim"
 export EDITOR
 
 PAGER="less -FirSwX"
@@ -238,15 +238,5 @@ prompt_color
 if [ -f "$HOME/.rvm/scripts/rvm" ]; then
     source $HOME/.rvm/scripts/rvm
 fi
-
-# Always put /usr/bin first.
-case $UNAME in
-    MINGW32*)
-        ;;
-    *)
-        # Various sbins
-        PATH="/usr/bin:/usr/local/bin:$PATH"
-        ;;
-esac
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
