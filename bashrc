@@ -42,7 +42,7 @@ esac
 #-------------------------------------------------------------------------------
 
 case $UNAME in
-    MINGW32*)
+    MINGW*)
         # Don't touch the default PATH, it inherits Windows.
         ;;
     *)
@@ -202,7 +202,13 @@ if [ -f "${SSH_ENV}" ]; then
          start_ssh_agent
      }
 else
-     start_ssh_agent
+    case $UNAME in
+      MINGW*)
+        ;;
+      *)
+        start_ssh_agent
+        ;;
+    esac
 fi
 
 #-------------------------------------------------------------------------------
@@ -221,7 +227,7 @@ done
 # User Shell Environment
 #-------------------------------------------------------------------------------
 case $UNAME in
-    MINGW32*)
+    MINGW*)
         # Don't condense path, since function doesn't work here.
         ;;
     *)
