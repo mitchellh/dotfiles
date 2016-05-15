@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/mitchellh/code/go/src/github.com/mitchellh/go-hearthstone'
-let g:netrw_dirhist_2='/Users/mitchellh/code/go/src/github.com/hashicorp/atlas-onprem'
-let g:netrw_dirhist_3='/Users/mitchellh/code/go/src/github.com/mitchellh/go-hearthstone'
-let g:netrw_dirhist_4='/Users/mitchellh/Downloads/pHash-0.9.6/src'
-let g:netrw_dirhist_5='/Users/mitchellh/code/go/src/github.com/mitchellh/go-hearthstone'
-let g:netrw_dirhist_6='/Users/mitchellh/code/go/src/github.com/mitchellh/hearthcloud-client'
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/mitchellh/code/go/src/github.com/mitchellh/hearthcloud'
+let g:netrw_dirhist_2='/Users/mitchellh/code/go/src/github.com/mitchellh/hearthcloud/apps/frontend'
+let g:netrw_dirhist_3='/Users/mitchellh/code/go/src/github.com/mitchellh/hearthcloud'
+let g:netrw_dirhist_4='/Users/mitchellh/code/go/src/github.com/mitchellh/hearthcloud/apps/frontend'
+let g:netrw_dirhist_5='/Users/mitchellh/code/go/src/github.com/mitchellh/hearthcloud'
+let g:netrw_dirhist_6='/Users/mitchellh/code/go/src/github.com/mitchellh/hearthcloud/apps/frontend'
+let g:netrw_dirhist_7='/Users/mitchellh/code/go/src/github.com/mitchellh/hearthcloud'

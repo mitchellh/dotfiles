@@ -39,6 +39,10 @@ alias top-right-corner move ${sox}+${ssx}/2;${soy} ${ssx}/2;${ssy}/2
 alias bot-left-corner move ${sox};${soy}+${ssy}/2 ${ssx}/2;${ssy}/2
 alias bot-right-corner move ${sox}+${ssx}/2;${soy}+${ssy}/2 ${ssx}/2;${ssy}/2
 
+# Screenshot alias
+alias screenshot sequence ${top-left-corner} > resize 1500 1500
+bind pad1:ctrl ${screenshot}
+
 #--------------------------------------------------------------------
 # Layouts
 #--------------------------------------------------------------------
