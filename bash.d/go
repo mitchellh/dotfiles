@@ -4,6 +4,7 @@
 # if it has.
 
 export GOPATH="$HOME/code/go"
+export GOROOT_BOOTSTRAP="$HOME/go-bootstrap"
 mkdir -p $GOPATH
 export PATH="${GOPATH}/bin:$PATH"
 
