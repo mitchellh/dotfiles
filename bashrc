@@ -215,7 +215,7 @@ fi
 # Other
 #-------------------------------------------------------------------------------
 # Plugins
-PLUGINS=( "depot_tools" "git" "go" "java" "rbenv" "scala" "tmux" "windows" )
+PLUGINS=( "depot_tools" "git" "go" "gvm" "java" "rbenv" "rvm" "scala" "tmux" "windows" )
 
 for plugin in "${PLUGINS[@]}"
 do
@@ -240,9 +240,3 @@ esac
 # Set default prompt if interactive
 test -n "$PS1" &&
 prompt_color
-
-if [ -f "$HOME/.rvm/scripts/rvm" ]; then
-    source $HOME/.rvm/scripts/rvm
-fi
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

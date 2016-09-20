@@ -34,8 +34,11 @@
 [user]
 	name = Mitchell Hashimoto
 	email = mitchell.hashimoto@gmail.com
+	signingkey = A52F5B0A
 
 [branch]
 	autosetuprebase = always
 [credential]
 	helper = osxkeychain
+[commit]
+	gpgsign = true

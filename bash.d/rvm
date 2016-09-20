@@ -2,3 +2,6 @@
 
 # Load RVM if it is available
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then source "$HOME/.rvm/scripts/rvm" ; fi
+
+# Add RVM path to our path
+export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
