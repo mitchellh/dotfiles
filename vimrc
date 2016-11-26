@@ -1,14 +1,18 @@
 " Installation Instructions
 "	1. Place file in home directory as .vimrc
 "	2. Run the following command in terminal
-"		mkdir .vim .vim/bundle .vim/backup .vim/swap .vim/cache .vim/undo; git clone https://github.com/gmarik/vundle.git .vim/bundle/vundle
+"		mkdir .vim .vim/bundle .vim/backup .vim/swap .vim/cache .vim/undo; curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "	3. Launch Vim and Run
-"		:BundleInstall
+"		:PlugInstall
 "	5. Restart Vim
-set nocompatible
-filetype off
+scriptencoding utf-8
+set encoding=utf-8
 
-if has("win32")
+" Home path
+if has("nvim")
+    " Neovim
+    let g:vim_home_path = "~/nvim"
+elseif has("win32")
     " We're on Windows.
     let g:vim_home_path = "~/vimfiles"
 else
@@ -16,52 +20,30 @@ else
     let g:vim_home_path = "~/.vim"
 endif
 
-" Golang stuff
-if isdirectory($GOROOT)
-    set runtimepath+=$GOROOT/misc/vim
-endif
 
-execute "set rtp+=" . g:vim_home_path . "/bundle/vundle/"
-let g:vundle_default_git_proto = 'https'
-call vundle#rc(g:vim_home_path. "/bundle")
+"----------------------------------------------------------------------
+" Plugins
+"----------------------------------------------------------------------
+call plug#begin(g:vim_home_path . "/plugged")
+Plug 'https://github.com/mitchellh/vim-misc.git'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'fatih/vim-go'
+Plug 'gcmt/taboo.vim'
+Plug 'othree/yajs.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'rodjek/vim-puppet'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'vale1410/vim-minizinc'
+call plug#end()
 
-Bundle 'gmarik/vundle'
-
-" Language plugins
-Bundle "bryanjswift/vim-rust"
-Bundle "cespare/vim-toml"
-Bundle "elzr/vim-json"
-Bundle "empanda/vim-varnish"
-Bundle "groenewege/vim-less"
-Bundle "fatih/vim-go"
-Bundle "Glench/Vim-Jinja2-Syntax"
-Bundle "kchmck/vim-coffee-script"
-Bundle "PProvost/vim-ps1"
-Bundle "rodjek/vim-puppet"
-Bundle "tpope/vim-markdown"
-Bundle "nono/vim-handlebars"
-Bundle "wting/rust.vim"
-
-" Other plugins
-Bundle "airblade/vim-gitgutter"
-Bundle "godlygeek/tabular"
-Bundle "kien/ctrlp.vim"
-Bundle "Lokaltog/vim-easymotion"
-Bundle "Lokaltog/vim-powerline"
-Bundle "mileszs/ack.vim"
-Bundle "mhinz/vim-startify"
-Bundle "scrooloose/syntastic"
-Bundle "tpope/vim-eunuch"
-Bundle "tpope/vim-fugitive"
-
-" Personal bundles
-Bundle 'mitchellh/vim-misc'
-
-" Turn on filetype plugin and indent loading so that loading the
-" vim-misc stuff below loads the proper files.
-filetype plugin indent on
-
+"----------------------------------------------------------------------
+" Initialize
+"----------------------------------------------------------------------
 " Load in my custom vimrc if it exists
-if filereadable(expand(g:vim_home_path . "/bundle/vim-misc/vimrc.vim"))
-    execute "source " . g:vim_home_path . "/bundle/vim-misc/vimrc.vim"
+if filereadable(expand(g:vim_home_path . "/plugged/vim-misc/vimrc.vim"))
+    execute "source " . g:vim_home_path . "/plugged/vim-misc/vimrc.vim"
 endif
