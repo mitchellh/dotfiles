@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Set Latex location
+if [[ `uname` == "Darwin" ]]; then
+    export PATH="/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin/:$PATH"
+fi
