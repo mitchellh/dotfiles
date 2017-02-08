@@ -1,6 +1,6 @@
 " Installation instructions:
 "
-"   1. Install vim-plug: curl -fLo ~/nvim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"   1. Install vim-plug: curl -fLo ~/nvim/autoload/plug.vim --create-dirs \https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "   2. :PlugInstall
 "
 scriptencoding utf-8
