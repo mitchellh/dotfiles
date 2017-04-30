@@ -38,6 +38,7 @@ Plug 'rodjek/vim-puppet'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'vale1410/vim-minizinc'
+Plug 'dracula/vim'
 call plug#end()
 
 "----------------------------------------------------------------------
