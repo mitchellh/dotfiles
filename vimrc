@@ -39,6 +39,8 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'vale1410/vim-minizinc'
 Plug 'dracula/vim'
+Plug 'vim-scripts/AfterColors.vim'
+Plug 'chrisbra/Colorizer'
 call plug#end()
 
 "----------------------------------------------------------------------
