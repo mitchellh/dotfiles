@@ -41,6 +41,7 @@ Plug 'vale1410/vim-minizinc'
 Plug 'dracula/vim'
 Plug 'vim-scripts/AfterColors.vim'
 Plug 'chrisbra/Colorizer'
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 "----------------------------------------------------------------------
