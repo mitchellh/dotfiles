@@ -240,3 +240,6 @@ esac
 # Set default prompt if interactive
 test -n "$PS1" &&
 prompt_color
+
+# added by travis gem
+[ -f /Users/mitchellh/.travis/travis.sh ] && source /Users/mitchellh/.travis/travis.sh
