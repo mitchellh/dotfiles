@@ -42,6 +42,7 @@ Plug 'dracula/vim'
 Plug 'vim-scripts/AfterColors.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'easymotion/vim-easymotion'
+Plug 'joukevandermaas/vim-ember-hbs'
 call plug#end()
 
 "----------------------------------------------------------------------
