@@ -1,113 +1,55 @@
-tap 'caskroom/cask'
-tap 'homebrew/bundle'
-tap 'homebrew/core'
-tap 'homebrew/python'
-tap 'homebrew/science'
-tap 'neovim/neovim'
-tap 'rogual/neovim-dot-app'
-cask 'xquartz'
-brew 'ack'
-brew 'pkg-config'
-brew 'xz', args: ['universal']
-brew 'readline'
-brew 'sqlite'
-brew 'gdbm'
-brew 'makedepend'
-brew 'openssl', args: ['universal']
-brew 'python'
-brew 'libxml2'
-brew 'augeas'
-brew 'autoconf'
-brew 'automake'
-brew 'libpng', args: ['universal']
-brew 'freetype', args: ['universal']
-brew 'fontconfig', args: ['universal']
-brew 'pixman'
-brew 'gettext'
-brew 'libffi'
-brew 'pcre'
-brew 'glib'
-brew 'cairo'
-brew 'dialog'
-brew 'certbot'
-brew 'cimg'
-brew 'cloc'
-brew 'cmake'
-brew 'libgpg-error'
-brew 'libassuan'
-brew 'libgcrypt'
-brew 'libksba'
-brew 'pth'
-brew 'dirmngr'
-brew 'envchain'
-brew 'gmp'
-brew 'mpfr'
-brew 'libmpc'
-brew 'isl'
-brew 'gcc'
-brew 'jpeg', args: ['universal']
-brew 'libtiff', args: ['universal']
-brew 'giflib'
-brew 'webp', args: ['universal']
-brew 'gd', args: ['universal']
-brew 'git'
-brew 'libusb', args: ['universal']
-brew 'libusb-compat', args: ['universal']
-brew 'gnupg'
-brew 'pinentry'
-brew 'gpg-agent'
-brew 'gnupg2'
-brew 'libtasn1', args: ['universal']
-brew 'nettle'
-brew 'gnutls'
-brew 'graphviz'
-brew 'heroku'
-brew 'libtool', args: ['universal']
-brew 'little-cms2', args: ['universal']
-brew 'imagemagick'
-brew 'jasper', args: ['universal']
-brew 'oniguruma'
-brew 'jq'
-brew 'keybase'
-brew 'libevent'
-brew 'libgphoto2', args: ['universal']
-brew 'libicns', args: ['universal']
-brew 'libyaml'
-brew 'md5sha1sum'
-brew 'mercurial'
-brew 'scons'
-brew 'mongodb'
-brew 'mono'
-brew 'msgpack'
-brew 'net-snmp'
-brew 'node'
-brew 'phantomjs'
-brew 'protobuf'
-brew 'protobuf-swift'
-brew 'py2cairo'
-brew 's3cmd'
-brew 'sane-backends', args: ['universal']
-brew 'sloccount'
-brew 'the_silver_searcher'
-brew 'watch'
-brew 'watchman'
-brew 'wine'
-brew 'xhyve', args: ['HEAD']
-brew 'youtube-dl'
-brew 'homebrew/python/numpy'
-brew 'homebrew/python/matplotlib', args: ['with-cairo']
-brew 'neovim/neovim/neovim', args: ['HEAD']
-#cask 'alfred'
-cask 'discord'
-cask 'dropbox'
-cask 'google-chrome'
-cask 'imageoptim'
-cask 'istat-menus'
-cask 'iterm2'
-cask 'monodraw'
-cask 'screenflow'
-cask 'screenhero'
-cask 'skype'
-cask 'slack'
-#cask 'slate'
-cask 'spotify'
+tap "caskroom/cask"
+tap "homebrew/bundle"
+tap "homebrew/core"
+tap "homebrew/python"
+tap "homebrew/science"
+
+brew "git"
+brew "ffmpeg"
+brew "gnupg"
+brew "heroku"
+brew "jq"
+brew "macvim"
+brew "phantomjs"
+brew "pkg-config"
+brew "postgresql"
+brew "protobuf"
+brew "s3cmd"
+brew "the_silver_searcher"
+brew "tree"
+brew "watch"
+brew "watchman"
+brew "yarn"
+brew "youtube-dl"
+
+cask "1password"
+cask "alfred"
+cask "battle-net"
+cask "cloak"
+cask "discord"
+cask "docker"
+cask "dropbox"
+cask "evernote"
+cask "fantastical"
+cask "firefox"
+cask "google-chrome"
+cask "imageoptim"
+cask "iterm2"
+cask "kaleidoscope"
+cask "licecap"
+cask "monodraw"
+cask "ngrok"
+cask "postgres"
+cask "postico"
+cask "screenflow"
+cask "sketch"
+cask "skype"
+cask "slack"
+cask "slate"
+cask "spotify"
+cask "steam"
+cask "typora"
+cask "unrarx"
+cask "vlc"
+cask "waltr"
+cask "zoomus"
