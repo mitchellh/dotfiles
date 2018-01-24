@@ -32,7 +32,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go'
 Plug 'gcmt/taboo.vim'
-Plug 'othree/yajs.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'rodjek/vim-puppet'
 Plug 'tpope/vim-eunuch'
@@ -43,6 +42,9 @@ Plug 'vim-scripts/AfterColors.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'easymotion/vim-easymotion'
 Plug 'joukevandermaas/vim-ember-hbs'
+
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 call plug#end()
 
 "----------------------------------------------------------------------
