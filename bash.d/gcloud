@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Load gcloud sdk if installed by cask
+GCLOUD_PATH="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk"
+if [ -d ${GCLOUD_PATH} ]; then
+    source "${GCLOUD_PATH}/path.bash.inc"
+    source "${GCLOUD_PATH}/completion.bash.inc"
+fi

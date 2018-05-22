@@ -215,7 +215,7 @@ fi
 # Other
 #-------------------------------------------------------------------------------
 # Plugins
-PLUGINS=( "depot_tools" "git" "go" "gvm" "java" "latex" "mdv" "nvm" "rbenv" "rvm" "scala" "tmux" "windows" )
+PLUGINS=( "depot_tools" "gcloud" "git" "go" "gvm" "java" "latex" "mdv" "nvm" "rbenv" "rvm" "scala" "tmux" "windows" )
 
 for plugin in "${PLUGINS[@]}"
 do
