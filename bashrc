@@ -241,5 +241,8 @@ esac
 test -n "$PS1" &&
 prompt_color
 
+# Setup TTY for GPG
+export GPG_TTY=$(tty)
+
 # added by travis gem
 [ -f /Users/mitchellh/.travis/travis.sh ] && source /Users/mitchellh/.travis/travis.sh
