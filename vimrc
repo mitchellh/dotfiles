@@ -42,6 +42,8 @@ Plug 'vim-scripts/AfterColors.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'easymotion/vim-easymotion'
 Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
