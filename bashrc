@@ -106,7 +106,7 @@ HISTCONTROL=ignoreboth
 # on our Linux dev machines we can keep it clean. Its important anything
 # we do that uses the XDG directories uses the exported env vars directly.
 case $UNAME in
-    linux*)
+    Linux*)
         export XDG_CONFIG_HOME="$HOME/.config"
         ;;
     *)
