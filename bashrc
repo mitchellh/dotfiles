@@ -102,8 +102,17 @@ export FTP_PASSIVE
 FIGNORE="~:CVS:#:.pyc"
 HISTCONTROL=ignoreboth
 
-# XDG config
-export XDG_CONFIG_HOME="$HOME"
+# XDG config. This is different on Mac for historical reasons, but
+# on our Linux dev machines we can keep it clean. Its important anything
+# we do that uses the XDG directories uses the exported env vars directly.
+case $UNAME in
+    linux*)
+        export XDG_CONFIG_HOME="$HOME/.config"
+        ;;
+    *)
+        export XDG_CONFIG_HOME="$HOME"
+        ;;
+esac
 
 #-------------------------------------------------------------------------------
 # Editor and Pager
