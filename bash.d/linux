@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# We only want to run this script on Linux
+if [[ `uname` != "Linux" ]]; then
+    return
+fi
+
+# If this isn't a dev server, we exit, our Linux configurations are just
+# dev server setups atm.
+if [ ! -f "$HOME/DEV_SERVER" ]; then
+    return
+fi
+
+# Keybase setup
+if [ -x "$(command -v keybase)" -a -x "$(command -v jq)" ]; then
+    # If keybase isn't running, start it, or attempt to at least
+    if [ `keybase status -j | jq '.KBFS.Running'` != 'true' ]; then
+        KEYBASE_NO_SQUIRREL=1 run_keybase >/dev/null 2>&1
+    fi
+
+    # Bootstrap the .ssh directory if we have to. We determine if we have to
+    # if the id_rsa file is not present. We store dev-server specific SSH
+    # keys directly in Keybase. Alternate keys are not in cloud storage.
+    if [ ! -f "$HOME/.ssh/id_rsa" ]; then
+        if [ `keybase status -j | jq '.LoggedIn'` == 'true' ]; then
+            cp /keybase/private/mitchellh/.ssh/* $HOME/.ssh
+        fi
+    fi
+fi

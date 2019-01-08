@@ -225,6 +225,9 @@ fi
 #-------------------------------------------------------------------------------
 # Plugins
 PLUGINS=(
+    # Must be run first to setup the environment
+    "linux"
+
     "depot_tools"
     "gcloud"
     "git"
