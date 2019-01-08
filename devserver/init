@@ -1,0 +1,50 @@
+#!/bin/bash
+#
+# This script initializes the dev server.
+
+SCRIPT_NAME="$(basename ${BASH_SOURCE[0]})"
+pushd $(dirname ${BASH_SOURCE[0]}) >/dev/null
+SCRIPT_DIR=$(pwd)
+popd >/dev/null
+
+source "${SCRIPT_DIR}/_functions.sh"
+
+if ! is_devserver; then
+    err "This script can only be called on a remote dev machine."
+    exit 1
+fi
+
+# Keybase must be running (specifically kbfs)
+if [ `keybase status -j | jq '.KBFS.Running'` != 'true' ]; then
+    status "Keybase is not running, attempting to start it..."
+    run_keybase
+
+    if [ `keybase status -j | jq '.KBFS.Running'` != 'true' ]; then
+        err "Failed to start Keybase. Try run_keybase to diagnose errors."
+        exit 1
+    fi
+fi
+
+# We must log in
+if [ `keybase status -j | jq '.LoggedIn'` != 'true' ]; then
+    status "Not logged into keybase, let's log in."
+    keybase login
+
+    if [ `keybase status -j | jq '.LoggedIn'` != 'true' ]; then
+        err "Failed to log in to Keybase. Run init again."
+        exit 1
+    fi
+fi
+
+# Logged in
+if [ ! -f "$HOME/.ssh/id_rsa" ]; then
+    status "Copying SSH keys to ~/.ssh"
+    cp /keybase/private/mitchellh/.ssh/* $HOME/.ssh
+
+    status "Verifying SSH access..."
+    ssh -T git@github.com >/dev/null 2>&1
+    if [ $? -ne 1 ]; then
+        err "SSH couldn't be verified."
+        exit 1
+    fi
+fi
