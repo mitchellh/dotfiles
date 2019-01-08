@@ -48,3 +48,6 @@ if [ ! -f "$HOME/.ssh/id_rsa" ]; then
         exit 1
     fi
 fi
+
+# Done
+success "Success! Development environment initialized."
