@@ -200,6 +200,11 @@ function start_ssh_agent {
         return
     fi
 
+    if [ ! -d "$(dirname $SSH_ENV)" ]; then
+        mkdir -p $(dirname $SSH_ENV)
+        chmod 0700 $(dirname $SSH_ENV)
+    fi
+
     ssh-agent | sed 's/^echo/#echo/' > ${SSH_ENV}
     chmod 0600 ${SSH_ENV}
     . ${SSH_ENV} > /dev/null
