@@ -196,10 +196,14 @@ puniq() {
 SSH_ENV=$HOME/.ssh/environment
 
 function start_ssh_agent {
-     ssh-agent | sed 's/^echo/#echo/' > ${SSH_ENV}
-     chmod 0600 ${SSH_ENV}
-     . ${SSH_ENV} > /dev/null
-     ssh-add
+    if [ ! -x "$(command -v ssh-agent)" ]; then
+        exit 0
+    fi
+
+    ssh-agent | sed 's/^echo/#echo/' > ${SSH_ENV}
+    chmod 0600 ${SSH_ENV}
+    . ${SSH_ENV} > /dev/null
+    ssh-add
 }
 
 # Source SSH agent settings if it is already running, otherwise start
