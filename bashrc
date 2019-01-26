@@ -152,7 +152,12 @@ prompt_compact() {
 }
 
 prompt_color() {
-    PS1="${GREEN}\W\$(parse_git_branch) → ${GREY}"
+    local remote=""
+    if ! grep docker /proc/1/cgroup -qa >/dev/null 2>&1; then
+        remote="🐶 "
+    fi
+
+    PS1="${GREEN}${remote}\W\$(parse_git_branch) → ${GREY}"
     PS2="\[[33;1m\]continue \[[0m[1m\]> "
 }
 
