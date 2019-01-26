@@ -153,7 +153,7 @@ prompt_compact() {
 
 prompt_color() {
     local remote=""
-    if ! grep docker /proc/1/cgroup -qa >/dev/null 2>&1; then
+    if grep docker /proc/1/cgroup -qa >/dev/null 2>&1; then
         remote="🐶 "
     fi
 
