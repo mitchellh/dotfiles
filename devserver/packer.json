@@ -1,0 +1,23 @@
+{
+  "_comment": "DIGITALOCEAN_API_TOKEN should be set for API access.",
+
+  "builders": [{
+    "type": "digitalocean",
+    "image": "ubuntu-18-04-x64",
+    "region": "sfo2",
+    "size": "s-4vcpu-8gb",
+    "ssh_username": "root"
+  }],
+
+  "provisioners": [{
+    "type": "shell",
+    "scripts": [
+      "{{ template_dir }}/setup.sh"
+    ]
+  }, {
+    "type": "shell",
+    "inline": [
+      "rm $HOME/.ssh/authorized_keys"
+    ]
+  }]
+}
