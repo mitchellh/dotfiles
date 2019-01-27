@@ -1,7 +1,7 @@
-ARG GOLANG_VERSION=1.11.4
-
 #--------------------------------------------------------------------
 # Go
+
+ARG GOLANG_VERSION=1.11.4
 
 FROM golang:$GOLANG_VERSION as golang_stage
 
@@ -16,14 +16,16 @@ FROM ubuntu:18.04
 
 # Install all the packages we care about
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update -qq && apt-get upgrade -y && apt-get install -qq -y \
+RUN apt-get update -qq && apt-get upgrade -y && apt-get install -y \
     build-essential \
     curl \
+    docker.io \
     git \
     jq \
 	locales \
     openssh-client \
     silversearcher-ag \
+    sudo \
     tmux \
 	vim-nox \
 	--no-install-recommends \
@@ -38,6 +40,19 @@ RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
 	dpkg-reconfigure --frontend=noninteractive locales && \
 	update-locale LANG=$LANG LC_ALL=$LC_ALL LANGUAGE=$LANGUAGE
 
+# Passwordless sudo for "sudo" group
+RUN echo "%sudo ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/sudo
+
+#--------------------------------------------------------------------
+# Keybase
+
+# Install Keybase
+RUN curl -s -O https://prerelease.keybase.io/keybase_amd64.deb && \
+    apt-get update -qq && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y ./keybase_amd64.deb && \
+    rm keybase_amd64.deb; \
+    rm -rf /var/lib/apt/lists/* /var/cache/*
+
 #--------------------------------------------------------------------
 # Go
 
@@ -49,13 +64,22 @@ ENV PATH="/usr/local/go/bin:$PATH"
 ENV GOROOT_BOOTSTRAP="/usr/local/go"
 
 #--------------------------------------------------------------------
+# Create the user - we need an unprivileged user for Keybase to work
+# properly. And we need Keybase to have our keys to sign commits.
+
+ARG USER=mitchellh
+ARG USER_ID=1000
+RUN useradd -m -u $USER_ID -G users,sudo,docker -s /bin/bash $USER
+USER $USER
+
+#--------------------------------------------------------------------
 # Login
 
 # Proper colors
 ENV TERM screen-256color
 
 # Make sure when we enter that we start in our home directory
-WORKDIR /root
+WORKDIR /home/$USER
 
 # I use bash, so let's drop right into bash
 COPY entrypoint.sh /bin/entrypoint.sh

@@ -33,4 +33,14 @@ if [ ! -d ".vim/bundle" ]; then
     TERM=dumb vim +PlugInstall +qall >vim.log 2>&1
 fi
 
+#--------------------------------------------------------------------
+# Start Keybase
+
+# Fix fuse permissions
+sudo chmod 0666 /dev/fuse
+
+# Start Keybase
+export KEYBASE_NO_SQUIRREL=1
+run_keybase
+
 /bin/bash
