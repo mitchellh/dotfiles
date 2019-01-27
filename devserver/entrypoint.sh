@@ -33,7 +33,7 @@ fi
 
 # If the FQDN doesn't work then set it manually
 if [ "$(hostname -f 2>/dev/null || echo 0)" -eq "0" ]; then
-    echo "127.0.0.1     $(hostname)" | sudo tee -a /etc/hosts
+    echo "127.0.0.1     $(hostname)" | sudo tee -a /etc/hosts >/dev/null 2>&1
 fi
 
 #--------------------------------------------------------------------
