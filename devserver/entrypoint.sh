@@ -34,6 +34,14 @@ if [ ! -d ".vim/bundle" ]; then
 fi
 
 #--------------------------------------------------------------------
+# Docker
+
+# Fix permissions if they don't allow the Docker user
+if [ -S /var/run/docker.sock ]; then
+    sudo chgrp docker /var/run/docker.sock
+fi
+
+#--------------------------------------------------------------------
 # Start Keybase
 
 # Fix fuse permissions
