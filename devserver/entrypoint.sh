@@ -42,6 +42,14 @@ if [ -S /var/run/docker.sock ]; then
 fi
 
 #--------------------------------------------------------------------
+# Hostname
+
+# If the FQDN doesn't work then set it manually
+if [ "$(hostname -f 2>/dev/null || echo 0)" -eq "0" ]; then
+    echo "127.0.0.1     $(hostname)" | sudo tee -a /etc/hosts
+fi
+
+#--------------------------------------------------------------------
 # Start Keybase
 
 # Fix fuse permissions
