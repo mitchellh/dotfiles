@@ -36,7 +36,7 @@ for path in $SCRIPT_DIR/*; do
 
   # Build our complete path to the home directory
   target="$HOME/$target"
-  if [ -h $target ]; then
+  if [ -h $target -o -f $target ]; then
     rm $target
   elif [ -d $target ]; then
     rm -rf $target
