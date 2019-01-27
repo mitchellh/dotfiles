@@ -4,8 +4,14 @@
 [color]
   ui = true
 
+[difftool "Kaleidoscope"]
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+
 [difftool]
 	prompt = false
+
+[diff]
+	tool = Kaleidoscope
 
 [github]
 	user = mitchellh
@@ -29,6 +35,9 @@
 
 [branch]
 	autosetuprebase = always
+
+[credential]
+	helper = osxkeychain
 
 [commit]
 	gpgsign = true

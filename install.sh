@@ -21,12 +21,18 @@ contains() {
 }
 
 # copy or symlink all the dotfiles
-UNAME=$(uname)
+UNAME=$(uname | tr '[:upper:]' '[:lower:]')
 for path in $SCRIPT_DIR/*; do
   name=$(basename $path)
   case $name in
     *.md|*.sh) continue;;
   esac
+
+  # If there exists a platform-specific version, then use that
+  if [ -e "${path}.${UNAME}" ]; then
+    echo "Using platform-specific ${name} for ${UNAME}"
+    path="${path}.${UNAME}"
+  fi
 
   # If the file is in the skip dot list, then we don't add a dot
   target="$name"
@@ -43,7 +49,7 @@ for path in $SCRIPT_DIR/*; do
   fi
 
   case $UNAME in
-    CYGWIN* | MINGW32*)
+    cygwin* | mingw32*)
       cp -R $path "$target"
       echo "Copied $name to $target."
       ;;
