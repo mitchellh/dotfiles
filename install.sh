@@ -3,9 +3,16 @@
 # This installation is destructive, as it removes exisitng files/directories.
 # Use at your own risk.
 
+# Get path to the current script
+SCRIPT_NAME="$(basename ${BASH_SOURCE[0]})"
+pushd $(dirname ${BASH_SOURCE[0]}) > /dev/null
+SCRIPT_DIR=$(pwd)
+popd > /dev/null
+
 UNAME=$(uname)
 
-for name in *; do
+for path in $SCRIPT_DIR/*; do
+  name=$(basename $path)
   if [ ! $name == "README.md" -a ! $name == "install.sh" ]; then
     target="$name"
     if [ ! $name == "nvim" ]; then
@@ -25,8 +32,8 @@ for name in *; do
             echo "Copied $PWD/$name to $target."
             ;;
         *)
-            ln -s "$PWD/$name" "$target"
-            echo "Linked $PWD/$name to $target."
+            ln -s $path "$target"
+            echo "Linked $path to $target."
             ;;
     esac
   fi
