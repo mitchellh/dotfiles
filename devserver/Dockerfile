@@ -21,15 +21,16 @@ RUN apt-get update -qq && apt-get upgrade -y && apt-get install -y \
     curl \
     docker.io \
     git \
+    gnupg2 \
     jq \
-	locales \
+    locales \
     openssh-client \
     silversearcher-ag \
     sudo \
     tmux \
-	vim-nox \
-	--no-install-recommends \
-	&& rm -rf /var/lib/apt/lists/*
+    vim-nox \
+    --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/*
 
 # Locale defaults to empty, so let's setup our locale
 ENV LANG="en_US.UTF-8"
@@ -48,6 +49,7 @@ RUN echo "%sudo ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/sudo
 
 # Install Keybase
 RUN curl -s -O https://prerelease.keybase.io/keybase_amd64.deb && \
+    apt-key adv --fetch-keys https://keybase.io/docs/server_security/code_signing_key.asc && \
     apt-get update -qq && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y ./keybase_amd64.deb && \
     rm keybase_amd64.deb; \
