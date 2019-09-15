@@ -27,3 +27,8 @@ case $UNAME in
         GOROOT="$(cygpath -w $GOROOT)"
         ;;
 esac
+
+# Configure our private repositories. We just blacklist all of my personal
+# and work GitHub to make this easy.
+
+export GOPRIVATE="github.com/mitchellh,github.com/hashicorp"
