@@ -30,7 +30,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'tag': '*' }
 Plug 'gcmt/taboo.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'rodjek/vim-puppet'
