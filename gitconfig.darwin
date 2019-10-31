@@ -31,7 +31,7 @@
 [user]
 	name = Mitchell Hashimoto
 	email = mitchell.hashimoto@gmail.com
-	signingkey = A3A9A8F4F25C3E56
+	signingkey = 523D5DC389D273BC
 
 [branch]
 	autosetuprebase = always
