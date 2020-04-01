@@ -114,6 +114,9 @@ case $UNAME in
         ;;
 esac
 
+# Silence deprecation on Catalina
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 #-------------------------------------------------------------------------------
 # Editor and Pager
 #-------------------------------------------------------------------------------
