@@ -9,3 +9,4 @@ if [ -f '/Users/mitchellh/Downloads/google-cloud-sdk/path.bash.inc' ]; then sour
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/mitchellh/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/mitchellh/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+if [ -e /Users/mitchellh/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/mitchellh/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

@@ -44,7 +44,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
-
+Plug 'LnL7/vim-nix'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 call plug#end()
