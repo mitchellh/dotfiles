@@ -6,3 +6,4 @@ nvim/plugged
 nvim/swap
 nvim/undo
 *.elc
+backup.tar.gz
