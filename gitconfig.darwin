@@ -31,7 +31,7 @@
 [user]
 	name = Mitchell Hashimoto
 	email = mitchell.hashimoto@gmail.com
-	signingkey = 523D5DC389D273BC
+	signingkey = A04D91F3AA0062627A79C9AD523D5DC389D273BC
 
 [branch]
 	autosetuprebase = always
@@ -41,3 +41,5 @@
 
 [commit]
 	gpgsign = true
+[gpg]
+	program = /usr/local/bin/gpg
