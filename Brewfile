@@ -34,7 +34,7 @@ cask "synology-drive"
 cask "tableplus"
 cask "typora"
 cask "vlc"
-cask "zoomus"
+cask "zoom"
 mas "Bear", id: 1091189122
 mas "GoodNotes", id: 1444383602
 mas "iMovie", id: 408981434
